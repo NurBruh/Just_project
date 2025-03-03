@@ -47,27 +47,28 @@
 	<div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
 		<div class="container w-container">
 			<div class="w-layout-grid grid-navbar">
-				<a href="home-2.html" class="brand w-nav-brand"><img src="~/images/gearo-logo.svg" loading="lazy" alt="image" class="logo" /></a>
+				<a class="brand w-nav-brand" asp-controller="Home" asp-action="Index"><img src="~/images/gearo-logo.svg" loading="lazy" alt="image" class="logo" /></a>
 				<nav role="navigation" id="w-node-f31a0de7-0e5d-4f6d-ed05-08921b14aef8-1b14aef3" class="nav-menu w-nav-menu">
-					<a href="home-2.html" class="nav-link w-nav-link">Home</a>
-					<a href="about-us.html" class="nav-link w-nav-link">About Us</a>
+					<a class="nav-link w-nav-link" asp-controller="Home" asp-action="Index">Home</a>
+					<a class="nav-link w-nav-link" asp-controller="Home" asp-action="About">About Us</a>
 					<div data-hover="true" data-delay="0" data-w-id="f31a0de7-0e5d-4f6d-ed05-08921b14aefb" class="dropdown w-dropdown">
 						<div class="dropdown-toggle nav-link w-dropdown-toggle">
 							<div>Pages</div>
 							<div class="dropdown-icon w-icon-dropdown-toggle"></div>
 						</div>
-						<nav class="dropdown-list w-dropdown-list">
-							<a href="home-2.html" aria-current="page" class="dropdown-link w-dropdown-link w--current">Home</a>
-							<a href="shop.html" class="dropdown-link w-dropdown-link">Shop</a>
-							<a href="about-us.html" class="dropdown-link w-dropdown-link">About Us</a>
-							<a href="contact-us.html" class="dropdown-link w-dropdown-link">Contact Us</a>
-							<a href="blog.html" class="dropdown-link w-dropdown-link">Blog</a>
-							<a href="faqs.html" class="dropdown-link w-dropdown-link">FAQs</a>
-							<a href="privacy-policy.html" class="dropdown-link w-dropdown-link">Privacy Policy</a>
+						<nav class="dropdown-list w-dropdown-list" >
+							<a aria-current="page" class="dropdown-link w-dropdown-link w--current" asp-controller="Home" asp-action="Index">Home</a>
+							<a class="dropdown-link w-dropdown-link" asp-controller="Shop" asp-action="Index">Shop</a>
+							<a class="dropdown-link w-dropdown-link" asp-controller="Home" asp-action="About">About Us</a>
+							<a class="dropdown-link w-dropdown-link" asp-controller="Contact" asp-action="Index">Contact Us</a>
+							<a class="dropdown-link w-dropdown-link" asp-controller="Blog" asp-action="Index">Blog</a>
+							<a class="dropdown-link w-dropdown-link" asp-controller="Faqs" asp-action="Faqs">FAQs</a>
+							<a class="dropdown-link w-dropdown-link" asp-controller="Home" asp-action="Faqs">FAQs_with home controller</a>
+							<a class="dropdown-link w-dropdown-link" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
 						</nav>
 					</div>
-					<a href="blog.html" class="nav-link w-nav-link">Blog</a>
-					<a href="contact-us.html" class="nav-link w-nav-link">Contact Us</a>
+					<a class="nav-link w-nav-link" asp-controller="Blog" asp-action="Index">Blog</a>
+					<a class="nav-link w-nav-link" asp-controller="Contact" asp-action="Index">Contact Us</a>
 				</nav>
 				<div id="w-node-f31a0de7-0e5d-4f6d-ed05-08921b14af1b-1b14aef3" class="navbar-right">
 					<div data-hover="true" data-delay="0" data-w-id="f31a0de7-0e5d-4f6d-ed05-08921b14af1c" class="button-dropdown w-dropdown">
@@ -81,12 +82,12 @@
 						<nav class="button-dropdown-list w-dropdown-list">
 							<div class="w-dyn-list">
 								<div role="list" class="w-dyn-items">
-									<div role="listitem" class="w-dyn-item"><a href="category/carpenter-tool.html" class="w-dropdown-link">Carpenter tool</a></div>
-									<div role="listitem" class="w-dyn-item"><a href="category/painting-tool.html" class="w-dropdown-link">Painting tool</a></div>
-									<div role="listitem" class="w-dyn-item"><a href="category/power-tool.html" class="w-dropdown-link">Power tool</a></div>
-									<div role="listitem" class="w-dyn-item"><a href="category/hand-tool.html" class="w-dropdown-link">Hand tool</a></div>
-									<div role="listitem" class="w-dyn-item"><a href="category/plumbing-tool.html" class="w-dropdown-link">Plumbing tool</a></div>
-									<div role="listitem" class="w-dyn-item"><a href="category/flathead-tool.html" class="w-dropdown-link">Flathead tool</a></div>
+									<div role="listitem" class="w-dyn-item"><a class="w-dropdown-link" asp-controller="Category" asp-action="Carpenter">Carpenter tool</a></div>
+									<div role="listitem" class="w-dyn-item"><a class="w-dropdown-link" asp-controller="Category" asp-action="Painting">Painting tool</a></div>
+									<div role="listitem" class="w-dyn-item"><a class="w-dropdown-link" asp-controller="Category" asp-action="Power">Power tool</a></div>
+									<div role="listitem" class="w-dyn-item"><a class="w-dropdown-link" asp-controller="Category" asp-action="Hand">Hand tool</a></div>
+									<div role="listitem" class="w-dyn-item"><a class="w-dropdown-link" asp-controller="Category" asp-action="Plumbing">Plumbing tool</a></div>
+									<div role="listitem" class="w-dyn-item"><a class="w-dropdown-link" asp-controller="Category" asp-action="Flathead">Flathead tool</a></div>
 								</div>
 							</div>
 						</nav>
@@ -367,7 +368,7 @@
 														<div>Pay with browser.</div>
 													</a>
 												</div>
-												<a href="checkout.html" value="Continue to Checkout" class="w-commerce-commercecartcheckoutbutton button-dark" data-loading-text="Hang Tight..." data-node-type="cart-checkout-button">
+												<a value="Continue to Checkout" class="w-commerce-commercecartcheckoutbutton button-dark" data-loading-text="Hang Tight..." data-node-type="cart-checkout-button" asp-controller="Checkout" asp-action="Index">
 													Continue to Checkout
 												</a>
 											</div>
