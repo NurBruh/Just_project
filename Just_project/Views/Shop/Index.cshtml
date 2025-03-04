@@ -8,15 +8,15 @@
 		<div class="category-hero-wrap">
 			<h1 class="hero-inner-title">Shop</h1>
 			<div class="category-hero-list-wrap">
-				<a href="/shop" aria-current="page" class="category-link w--current">All</a>
+				<a aria-current="page" class="category-link w--current" asp-controller="Shop" asp-action="Index">All</a>
 				<div class="w-dyn-list">
 					<div role="list" class="category-wrap w-dyn-items">
-						<div role="listitem" class="w-dyn-item"><a href="/category/carpenter-tool" class="category-link">Carpenter tool</a></div>
-						<div role="listitem" class="w-dyn-item"><a href="/category/painting-tool" class="category-link">Painting tool</a></div>
-						<div role="listitem" class="w-dyn-item"><a href="/category/power-tool" class="category-link">Power tool</a></div>
-						<div role="listitem" class="w-dyn-item"><a href="/category/hand-tool" class="category-link">Hand tool</a></div>
-						<div role="listitem" class="w-dyn-item"><a href="/category/plumbing-tool" class="category-link">Plumbing tool</a></div>
-						<div role="listitem" class="w-dyn-item"><a href="/category/flathead-tool" class="category-link">Flathead tool</a></div>
+						<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Carpenter">Carpenter tool</a></div>
+						<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Painting">Painting tool</a></div>
+						<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Power">Power tool</a></div>
+						<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Hand">Hand tool</a></div>
+						<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Plumbing">Plumbing tool</a></div>
+						<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Flathead">Flathead tool</a></div>
 					</div>
 				</div>
 			</div>
