@@ -7,10 +7,12 @@ namespace Just_project.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IMessage _sender;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMessage sender)
         {
             _logger = logger;
+            _sender = sender;
         }
 
         public IActionResult Index()
@@ -29,7 +31,20 @@ namespace Just_project.Controllers
         {
             return View();
         }
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult Contact(Message userMessage)
+        {
+            MessageValidator rules = new MessageValidator();
+            var result = rules.Validate(userMessage);
+            if (result.IsValid)
+            {
 
+            }
+            return View(userMessage);
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
