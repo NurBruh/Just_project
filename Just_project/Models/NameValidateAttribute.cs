@@ -16,5 +16,6 @@ namespace Just_project.Models
             else
                 return Enumerable.Empty<ModelValidationResult>();
         }
+
     }
 }

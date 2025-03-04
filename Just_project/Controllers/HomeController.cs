@@ -35,13 +35,28 @@ namespace Just_project.Controllers
         {
             return View();
         }
+        [HttpPost]
         public IActionResult Contact(Message userMessage)
         {
+            _logger.LogInformation("", DateTime.Now, userMessage.name, userMessage.Email, userMessage.Phone);
+
+
             MessageValidator rules = new MessageValidator();
             var result = rules.Validate(userMessage);
+
+            var errors = result.Errors;
+
             if (result.IsValid)
             {
-
+                _sender.sendMessage(userMessage.Email, userMessage.message, "New Message");
+                return View();
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    _logger.LogError("", DateTime.Now, userMessage.name, item.ErrorMessage);
+                }
             }
             return View(userMessage);
         }

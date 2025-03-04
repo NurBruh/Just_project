@@ -15,4 +15,5 @@ namespace Just_project.Models
             public string message { get; set; }
         
     }
+
 }
