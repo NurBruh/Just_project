@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Just_project.Models;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Just_project.Controllers
@@ -64,6 +65,19 @@ namespace Just_project.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public JsonResult ChangeCulture(string culture)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+
+                new CookieOptions { Expires = DateTime.Now.AddMonths(1) }
+                );
+
+            return Json(culture);
         }
     }
 }
