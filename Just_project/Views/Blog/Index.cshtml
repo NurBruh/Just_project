@@ -2,13 +2,17 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 	ViewData["Title"] = "Blog";
 *@
+
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
 @{
 	ViewData["Title"] = "Blog";
 }
 <!-- START OF HERO INNER SECTION -->
 <section class="hero-inner text-center">
 	<div class="w-layout-blockcontainer container w-container">
-		<div class="hero-inner-wrap"><h1 class="hero-inner-title">Блог</h1></div>
+		<div class="hero-inner-wrap"><h1 class="hero-inner-title">@Localizer["Blog"]</h1></div>
 		<div class="hero-inner-overly"></div>
 	</div>
 </section>
@@ -26,9 +30,9 @@
 								 src="~/images/rtx5000.png"
 								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
 								 class="blog-image" />
-							<div class="blog-date">12 март, 2025</div>
+							<div class="blog-date">12 @Localizer["Date"], 2025</div>
 						</div>
-						<div class="blog-info"><h2 class="blog-title">NVIDIA представила новую линейку видеокарт серии RTX 5000</h2></div>
+						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog1"]</h2></div>
 					</a>
 				</div>
 				<div role="listitem" class="w-dyn-item">
@@ -39,9 +43,9 @@
 								 src="~/images/467817_O.jpeg"
 								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
 								 class="blog-image" />
-							<div class="blog-date">12 март, 2025</div>
+							<div class="blog-date">12 @Localizer["Date"], 2025</div>
 						</div>
-						<div class="blog-info"><h2 class="blog-title">Intel выпустила 15-е поколение процессоров Core</h2></div>
+						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog2"]</h2></div>
 					</a>
 				</div>
 				<div role="listitem" class="w-dyn-item">
@@ -52,9 +56,9 @@
 								 src="~/images/pcl.jpeg"
 								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
 								 class="blog-image" />
-							<div class="blog-date">12 март, 2025</div>
+							<div class="blog-date">12 @Localizer["Date"], 2025</div>
 						</div>
-						<div class="blog-info"><h2 class="blog-title">SSD-накопители стали еще быстрее: представлена технология PCIe 5.0</h2></div>
+						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog3"]</h2></div>
 					</a>
 				</div>
 				<div role="listitem" class="w-dyn-item">
@@ -65,9 +69,9 @@
 								 src="~/images/pcsbor.png"
 								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
 								 class="blog-image" />
-							<div class="blog-date">12 март, 2025</div>
+							<div class="blog-date">12 @Localizer["Date"], 2025</div>
 						</div>
-						<div class="blog-info"><h2 class="blog-title">Как собрать игровой ПК в 2025 году: актуальные советы и бюджетные варианты</h2></div>
+						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog4"]</h2></div>
 					</a>
 				</div>
 				<div role="listitem" class="w-dyn-item">
@@ -78,9 +82,9 @@
 								 src="~/images/9000.png"
 								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
 								 class="blog-image" />
-							<div class="blog-date">12 март, 2025</div>
+							<div class="blog-date">12 @Localizer["Date"], 2025</div>
 						</div>
-						<div class="blog-info"><h2 class="blog-title">AMD Ryzen 9000 – новая эра мощных процессоров для рабочих станций</h2></div>
+						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog5"]</h2></div>
 					</a>
 				</div>
 				<div role="listitem" class="w-dyn-item">
@@ -91,9 +95,9 @@
 								 src="~/images/vabor.jpeg"
 								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
 								 class="blog-image" />
-							<div class="blog-date">12 март, 2025</div>
+							<div class="blog-date">12 @Localizer["Date"], 2025</div>
 						</div>
-						<div class="blog-info"><h2 class="blog-title">Как правильно настроить систему охлаждения для мощных сборок?</h2></div>
+						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog6"]</h2></div>
 					</a>
 				</div>
 			</div>
