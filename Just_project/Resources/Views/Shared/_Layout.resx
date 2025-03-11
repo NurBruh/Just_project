@@ -150,11 +150,35 @@
   <data name="Pages" xml:space="preserve">
     <value>pages</value>
   </data>
+  <data name="Payment" xml:space="preserve">
+    <value>payment</value>
+  </data>
+  <data name="Pay_message" xml:space="preserve">
+    <value>pay_mess</value>
+  </data>
   <data name="Privacy Policy" xml:space="preserve">
     <value>privacy</value>
   </data>
+  <data name="Refund" xml:space="preserve">
+    <value>rufund</value>
+  </data>
+  <data name="refund_mess" xml:space="preserve">
+    <value>mess</value>
+  </data>
+  <data name="shipping" xml:space="preserve">
+    <value>ship</value>
+  </data>
+  <data name="shipping_message" xml:space="preserve">
+    <value>bruh</value>
+  </data>
   <data name="Shop" xml:space="preserve">
     <value>shop</value>
+  </data>
+  <data name="Support_" xml:space="preserve">
+    <value>sup</value>
+  </data>
+  <data name="support_mess" xml:space="preserve">
+    <value>message</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>products</value>

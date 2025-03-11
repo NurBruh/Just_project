@@ -132,8 +132,20 @@
   <data name="Pay_message" xml:space="preserve">
     <value>Біз төлемдерге қатысты икемділіктің маңызды екенін түсінеміз.</value>
   </data>
+  <data name="Refund" xml:space="preserve">
+    <value>Оңай қайтару</value>
+  </data>
+  <data name="refund_mess" xml:space="preserve">
+    <value>Біздің оңай қайтару саясатымыз сізге көмектесетініне сенімді түрде сатып алыңыз.</value>
+  </data>
   <data name="Sale" xml:space="preserve">
     <value>Жеңілдіктерді көру</value>
+  </data>
+  <data name="shipping" xml:space="preserve">
+    <value>Тегін жеткізу</value>
+  </data>
+  <data name="shipping_message" xml:space="preserve">
+    <value>Барлық тапсырыстарыңызда тегін жеткізу ыңғайлылығын пайдаланыңыз.</value>
   </data>
   <data name="Support_" xml:space="preserve">
     <value>Онлайн қызмет көрсету</value>

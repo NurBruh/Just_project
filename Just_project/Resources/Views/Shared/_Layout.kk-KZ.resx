@@ -150,11 +150,35 @@
   <data name="Pages" xml:space="preserve">
     <value>Беттер</value>
   </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Икемді төлем</value>
+  </data>
+  <data name="Pay_message" xml:space="preserve">
+    <value>Біз төлемдерге қатысты икемділіктің маңызды екенін түсінеміз.</value>
+  </data>
   <data name="Privacy Policy" xml:space="preserve">
     <value>Авторлық құқық</value>
   </data>
+  <data name="Refund" xml:space="preserve">
+    <value>Оңай қайтару</value>
+  </data>
+  <data name="refund_mess" xml:space="preserve">
+    <value>Біздің оңай қайтару саясатымыз сізге көмектесетініне сенімді түрде сатып алыңыз.</value>
+  </data>
+  <data name="shipping" xml:space="preserve">
+    <value>Тегін жеткізу</value>
+  </data>
+  <data name="shipping_message" xml:space="preserve">
+    <value>Барлық тапсырыстарыңызда тегін жеткізу ыңғайлылығын пайдаланыңыз.</value>
+  </data>
   <data name="Shop" xml:space="preserve">
     <value>Дүкен</value>
+  </data>
+  <data name="Support_" xml:space="preserve">
+    <value>Онлайн қызмет көрсету</value>
+  </data>
+  <data name="support_mess" xml:space="preserve">
+    <value>Біздің арнайы онлайн қолдау көрсету тобымыз бір рет басу арқылы.</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>Барлық өнімдерді көру</value>

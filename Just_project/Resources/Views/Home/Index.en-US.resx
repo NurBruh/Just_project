@@ -132,8 +132,20 @@
   <data name="Pay_message" xml:space="preserve">
     <value>We understand that flexibility is key when it comes to payments.</value>
   </data>
+  <data name="Refund" xml:space="preserve">
+    <value>Easy refund</value>
+  </data>
+  <data name="refund_mess" xml:space="preserve">
+    <value>Shop with confidence that our easy refund policy has got you covered.</value>
+  </data>
   <data name="Sale" xml:space="preserve">
     <value>View discounts</value>
+  </data>
+  <data name="shipping" xml:space="preserve">
+    <value>Free shipping</value>
+  </data>
+  <data name="shipping_message" xml:space="preserve">
+    <value>Enjoy the convenience of free shipment on all your orders.</value>
   </data>
   <data name="Support_" xml:space="preserve">
     <value>Online support</value>

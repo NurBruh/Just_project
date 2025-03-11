@@ -150,11 +150,35 @@
   <data name="Pages" xml:space="preserve">
     <value>Страницы</value>
   </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Гибкая оплата</value>
+  </data>
+  <data name="Pay_message" xml:space="preserve">
+    <value>Мы понимаем, что гибкость имеет решающее значение, когда речь идет о платежах.</value>
+  </data>
   <data name="Privacy Policy" xml:space="preserve">
     <value>Авторская права</value>
   </data>
+  <data name="Refund" xml:space="preserve">
+    <value>Легкий возврат</value>
+  </data>
+  <data name="refund_mess" xml:space="preserve">
+    <value>Совершайте покупки с уверенностью, что наша простая политика возврата средств вам поможет.</value>
+  </data>
+  <data name="shipping" xml:space="preserve">
+    <value>Бесплатная доставка</value>
+  </data>
+  <data name="shipping_message" xml:space="preserve">
+    <value>Воспользуйтесь удобством бесплатной доставки всех ваших заказов.</value>
+  </data>
   <data name="Shop" xml:space="preserve">
     <value>Магазин</value>
+  </data>
+  <data name="Support_" xml:space="preserve">
+    <value>Онлайн поддержка</value>
+  </data>
+  <data name="support_mess" xml:space="preserve">
+    <value>Наша специализированная команда онлайн-поддержки находится всего в одном клике от вас.</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>Посмотреть все продукты</value>
