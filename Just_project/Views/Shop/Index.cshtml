@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
     ViewData["Title"] = "Shop";
 }
 @Html.Partial("InnerCategory")
@@ -14,13 +17,13 @@
                     <div role="listitem" class="w-dyn-item">
                         <a data-w-id="04e1353a-1709-d5fd-b655-09a804111d26" href="/product/new-tools-wood-cutter" class="product-item w-inline-block">
                             <div class="product-image-wrap">
-                                <img alt="New tools wood cutter" loading="lazy" src="images/RTX5090.png" class="product-image" />
+                                <img alt="New tools wood cutter" loading="lazy" src="~/images/RTX5090.png" class="product-image" />
                                 <div class="product-budge"></div>
-                                <div class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                <div class="product-button-item-wrap"><div class="button-dark">@Localizer["Shop"]</div></div>
                                 <div class="product-hover-overlay"></div>
                             </div>
                             <div class="product-info-wrap">
-                                <h2 class="product-title">NVIDIA RTX5090</h2>
+                                <h2 class="product-title">@Localizer["nvidia"] RTX5090</h2>
                                 <div class="product-price-wrap">
                                     <div class="product-price">$ 1,890.00 USD</div>
                                     <div class="compare-price">$ 2,000.00 USD</div>
@@ -32,13 +35,13 @@
                     <div role="listitem" class="w-dyn-item">
                         <a data-w-id="04e1353a-1709-d5fd-b655-09a804111d26" href="/product/gearo-15-inch-plastic-tool-bag" class="product-item w-inline-block">
                             <div class="product-image-wrap">
-                                <img alt="Gearo 15-inch plastic tool bag" loading="lazy" src="images/Gigabyte.png" class="product-image" />
+                                <img alt="Gearo 15-inch plastic tool bag" loading="lazy" src="~/images/Gigabyte.png" class="product-image" />
                                 <div class="product-budge"> </div>
-                                <div class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                <div class="product-button-item-wrap"><div class="button-dark">@Localizer["Shop"]</div></div>
                                 <div class="product-hover-overlay"></div>
                             </div>
                             <div class="product-info-wrap">
-                                <h2 class="product-title">Материнская плата Gigabyte B650 X AX V2</h2>
+                                <h2 class="product-title">@Localizer["MB"] Gigabyte B650 X AX V2</h2>
                                 <div class="product-price-wrap">
                                     <div class="product-price">$ 220.00 USD</div>
                                     <div class="compare-price">$ 250.00 USD</div>
@@ -50,13 +53,13 @@
                     <div role="listitem" class="w-dyn-item">
                         <a data-w-id="04e1353a-1709-d5fd-b655-09a804111d26" href="/product/electric-rotary-drill-machine" class="product-item w-inline-block">
                             <div class="product-image-wrap">
-                                <img alt="Electric rotary drill machine" loading="lazy" src="images/kcas.png" class="product-image" />
+                                <img alt="Electric rotary drill machine" loading="lazy" src="~/images/kcas.png" class="product-image" />
                                 <div class="product-budge"></div>
-                                <div class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                <div class="product-button-item-wrap"><div class="button-dark">@Localizer["Shop"]</div></div>
                                 <div class="product-hover-overlay"></div>
                             </div>
                             <div class="product-info-wrap">
-                                <h2 class="product-title">Блок питания AeroCool KCAS 1,000W</h2>
+                                <h2 class="product-title">@Localizer["PSU"] AeroCool KCAS 1,000W</h2>
                                 <div class="product-price-wrap">
                                     <div class="product-price">$ 175.00 USD</div>
                                     <div class="compare-price">$ 200.00 USD</div>
@@ -68,13 +71,13 @@
                     <div role="listitem" class="w-dyn-item">
                         <a data-w-id="04e1353a-1709-d5fd-b655-09a804111d26" href="/product/ingco-power-tools" class="product-item w-inline-block">
                             <div class="product-image-wrap">
-                                <img alt="Ingco power tools" loading="lazy" src="images/Fury.png" class="product-image" />
+                                <img alt="Ingco power tools" loading="lazy" src="~/images/Fury.png" class="product-image" />
                                 <div class="product-budge"></div>
-                                <div class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                <div class="product-button-item-wrap"><div class="button-dark">@Localizer["Shop"]</div></div>
                                 <div class="product-hover-overlay"></div>
                             </div>
                             <div class="product-info-wrap">
-                                <h2 class="product-title">SSD Kingston FURY Renegate 1tb</h2>
+                                <h2 class="product-title">@Localizer["SSD"] Kingston FURY Renegate 1tb</h2>
                                 <div class="product-price-wrap">
                                     <div class="product-price">$ 80.00 USD</div>
                                     <div class="compare-price">$ 100.00 USD</div>
@@ -86,13 +89,13 @@
                     <div role="listitem" class="w-dyn-item">
                         <a data-w-id="04e1353a-1709-d5fd-b655-09a804111d26" href="/product/7-in-1-magnetized-wrench" class="product-item w-inline-block">
                             <div class="product-image-wrap">
-                                <img alt="7-in-1 magnetized wrench" loading="lazy" src="images/GamerPC.png" class="product-image" />
+                                <img alt="7-in-1 magnetized wrench" loading="lazy" src="~/images/GamerPC.png" class="product-image" />
                                 <div class="product-budge"></div>
-                                <div class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                <div class="product-button-item-wrap"><div class="button-dark">@Localizer["Shop"]</div></div>
                                 <div class="product-hover-overlay"></div>
                             </div>
                             <div class="product-info-wrap">
-                                <h2 class="product-title">Игровой ПК</h2>
+                                <h2 class="product-title">@Localizer["GamingPC"]</h2>
                                 <div class="product-price-wrap">
                                     <div class="product-price">$ 999.00 USD</div>
                                     <div class="compare-price"></div>
@@ -104,13 +107,13 @@
                     <div role="listitem" class="w-dyn-item">
                         <a data-w-id="04e1353a-1709-d5fd-b655-09a804111d26" href="/product/industrial-pneumatic-nailer-with-duo-glide-roller" class="product-item w-inline-block">
                             <div class="product-image-wrap">
-                                <img alt="Industrial pneumatic nailer with duo glide roller" loading="lazy" src="images/OfficePc.png" class="product-image" />
+                                <img alt="Industrial pneumatic nailer with duo glide roller" loading="lazy" src="~/images/OfficePc.png" class="product-image" />
                                 <div class="product-budge"></div>
-                                <div class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                <div class="product-button-item-wrap"><div class="button-dark">@Localizer["Shop"]</div></div>
                                 <div class="product-hover-overlay"></div>
                             </div>
                             <div class="product-info-wrap">
-                                <h2 class="product-title">Офисный ПК</h2>
+                                <h2 class="product-title">@Localizer["OfficePC"]</h2>
                                 <div class="product-price-wrap">
                                     <div class="product-price">$ 400.00 USD</div>
                                     <div class="compare-price">$ 550.00 USD</div>
@@ -122,13 +125,13 @@
                     <div role="listitem" class="w-dyn-item">
                         <a data-w-id="04e1353a-1709-d5fd-b655-09a804111d26" href="/product/adjustable-wrenches" class="product-item w-inline-block">
                             <div class="product-image-wrap">
-                                <img alt="Adjustable wrenches" loading="lazy" src="images/MINIITX.jpg" class="product-image" />
+                                <img alt="Adjustable wrenches" loading="lazy" src="~/images/MINIITX.jpg" class="product-image" />
                                 <div class="product-budge"></div>
-                                <div class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                <div class="product-button-item-wrap"><div class="button-dark">@Localizer["Shop"]</div></div>
                                 <div class="product-hover-overlay"></div>
                             </div>
                             <div class="product-info-wrap">
-                                <h2 class="product-title">Игровой MiniITX ПК</h2>
+                                <h2 class="product-title">@Localizer["Gaming"] MiniITX ПК</h2>
                                 <div class="product-price-wrap">
                                     <div class="product-price">$ 1,190.00 USD</div>
                                     <div class="compare-price"></div>
@@ -140,13 +143,13 @@
                     <div role="listitem" class="w-dyn-item">
                         <a data-w-id="04e1353a-1709-d5fd-b655-09a804111d26" href="/product/truflex-steel-tape-3" class="product-item w-inline-block">
                             <div class="product-image-wrap">
-                                <img alt="Truflex steel tape" loading="lazy" src="images/WorkPC.png" class="product-image" />
+                                <img alt="Truflex steel tape" loading="lazy" src="~/images/WorkPC.png" class="product-image" />
                                 <div class="product-budge"></div>
-                                <div class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                <div class="product-button-item-wrap"><div class="button-dark">@Localizer["Shop"]</div></div>
                                 <div class="product-hover-overlay"></div>
                             </div>
                             <div class="product-info-wrap">
-                                <h2 class="product-title">ПК для рабочих задач</h2>
+                                <h2 class="product-title">@Localizer["PC_work"]</h2>
                                 <div class="product-price-wrap">
                                     <div class="product-price">$ 500.00 USD</div>
                                     <div class="compare-price"></div>
