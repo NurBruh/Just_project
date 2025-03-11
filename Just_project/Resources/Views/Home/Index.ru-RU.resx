@@ -129,8 +129,17 @@
   <data name="Payment" xml:space="preserve">
     <value>Гибкая оплата</value>
   </data>
+  <data name="Pay_message" xml:space="preserve">
+    <value>Мы понимаем, что гибкость имеет решающее значение, когда речь идет о платежах.</value>
+  </data>
   <data name="Sale" xml:space="preserve">
     <value>Просмотр скидок</value>
+  </data>
+  <data name="Support_" xml:space="preserve">
+    <value>Онлайн поддержка</value>
+  </data>
+  <data name="support_mess" xml:space="preserve">
+    <value>Наша специализированная команда онлайн-поддержки находится всего в одном клике от вас.</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>Посмотреть все продукты</value>
