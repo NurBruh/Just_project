@@ -120,6 +120,9 @@
   <data name="About Us" xml:space="preserve">
     <value>Біз туралы</value>
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>Талдықорған қаласы, Шымыр ауылы</value>
+  </data>
   <data name="All categories" xml:space="preserve">
     <value>Категориялар</value>
   </data>
