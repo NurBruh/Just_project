@@ -117,46 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About Us" xml:space="preserve">
-    <value>О нас</value>
+  <data name="First_sales" xml:space="preserve">
+    <value>Алғашқы тұтынушыларға 10% жеңілдік беріледі</value>
   </data>
-  <data name="Address" xml:space="preserve">
-    <value>Город Талдыкорган, село Шымыр</value>
+  <data name="Job" xml:space="preserve">
+    <value>Ләззат Алыңыз</value>
   </data>
-  <data name="All categories" xml:space="preserve">
-    <value>Все категорий </value>
+  <data name="Nasslad" xml:space="preserve">
+    <value>Біздің</value>
   </data>
-  <data name="Blog" xml:space="preserve">
-    <value>Блог</value>
+  <data name="Payment" xml:space="preserve">
+    <value>Икемді төлем</value>
   </data>
-  <data name="Contact Number" xml:space="preserve">
-    <value>Номер телефона</value>
-  </data>
-  <data name="Contact Us" xml:space="preserve">
-    <value>Связаться с нами</value>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>Электронная почта</value>
-  </data>
-  <data name="FAQs" xml:space="preserve">
-    <value>Часто задоваемые вопросы</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Главная страница</value>
-  </data>
-  <data name="Location" xml:space="preserve">
-    <value>Наше местоположение</value>
-  </data>
-  <data name="Pages" xml:space="preserve">
-    <value>Страницы</value>
-  </data>
-  <data name="Privacy Policy" xml:space="preserve">
-    <value>Авторская права</value>
-  </data>
-  <data name="Shop" xml:space="preserve">
-    <value>Магазин</value>
+  <data name="Sale" xml:space="preserve">
+    <value>Жеңілдіктерді көру</value>
   </data>
   <data name="View all products" xml:space="preserve">
-    <value>Посмотреть все продукты</value>
+    <value>Барлық өнімдерді көру</value>
+  </data>
+  <data name="Were" xml:space="preserve">
+    <value>Жұмысымыздан</value>
   </data>
 </root>
