@@ -1,29 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Shop";
 }
-<!-- HERO INNER SECTION -->
-<section class="hero-inner text-center">
-    <div class="w-layout-blockcontainer container w-container">
-        <div class="category-hero-wrap">
-            <h1 class="hero-inner-title">Shop</h1>
-            <div class="category-hero-list-wrap">
-                <a aria-current="page" class="category-link w--current" asp-controller="Shop" asp-action="Index">All</a>
-                <div class="w-dyn-list">
-                    <div role="list" class="category-wrap w-dyn-items">
-                        <div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Carpenter">Комплектующие</a></div>
-                        <div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Painting">Готовые сборки</a></div>
-                        <div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Power">Для офиса</a></div>
-                        <div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Hand">Игровые ПК</a></div>
-                        <div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Plumbing">Обслуживание</a></div>
-                        <div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Flathead">Кастомные сборки</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-inner-overly"></div>
-    </div>
-</section>
 
+@Html.Partial("InnerCategory")
 <!-- CATEGORY SIMPLE SECTION -->
 <section class="category-simple-section">
     <div class="w-layout-blockcontainer container w-container">
