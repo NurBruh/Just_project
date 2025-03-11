@@ -42,24 +42,24 @@
                 </a>
                 <nav role="navigation" id="w-node-f31a0de7-0e5d-4f6d-ed05-08921b14aef8-1b14aef3" class="nav-menu w-nav-menu">
                     <a class="nav-link w-nav-link" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
-                    <a class="nav-link w-nav-link" asp-controller="Home" asp-action="About">About Us</a>
+                    <a class="nav-link w-nav-link" asp-controller="Home" asp-action="About">@Localizer["About Us"]</a>
                     <div data-hover="true" data-delay="0" data-w-id="f31a0de7-0e5d-4f6d-ed05-08921b14aefb" class="dropdown w-dropdown">
                         <div class="dropdown-toggle nav-link w-dropdown-toggle">
-                            <div>Pages</div>
+                            <div>@Localizer["Pages"]</div>
                             <div class="dropdown-icon w-icon-dropdown-toggle"></div>
                         </div>
                         <nav class="dropdown-list w-dropdown-list">
                             <a aria-current="page" class="dropdown-link w-dropdown-link w--current" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
-                            <a class="dropdown-link w-dropdown-link" asp-controller="Shop" asp-action="Index">Shop</a>
-                            <a class="dropdown-link w-dropdown-link" asp-controller="Home" asp-action="About">About Us</a>
-                            <a class="dropdown-link w-dropdown-link" asp-controller="Contact" asp-action="Index">Contact Us</a>
-                            <a class="dropdown-link w-dropdown-link" asp-controller="Blog" asp-action="Index">Blog</a>
-                            <a class="dropdown-link w-dropdown-link" asp-controller="Home" asp-action="Faqs">FAQs_with home controller</a>
-                            <a class="dropdown-link w-dropdown-link" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                            <a class="dropdown-link w-dropdown-link" asp-controller="Shop" asp-action="Index">@Localizer["Shop"]</a>
+                            <a class="dropdown-link w-dropdown-link" asp-controller="Home" asp-action="About">@Localizer["About Us"]</a>
+                            <a class="dropdown-link w-dropdown-link" asp-controller="Contact" asp-action="Index">@Localizer["Contact Us"]</a>
+                            <a class="dropdown-link w-dropdown-link" asp-controller="Blog" asp-action="Index">@Localizer["Blog"]</a>
+                            <a class="dropdown-link w-dropdown-link" asp-controller="Faqs" asp-action="Index">@Localizer["FAQs"]</a>
+                            <a class="dropdown-link w-dropdown-link" asp-controller="Home" asp-action="Privacy">@Localizer["Privacy Policy"]</a>
                         </nav>
                     </div>
-                    <a class="nav-link w-nav-link" asp-controller="Blog" asp-action="Index">Blog</a>
-                    <a class="nav-link w-nav-link" asp-controller="Contact" asp-action="Index">Contact Us</a>
+                    <a class="nav-link w-nav-link" asp-controller="Blog" asp-action="Index">@Localizer["Blog"]</a>
+                    <a class="nav-link w-nav-link" asp-controller="Contact" asp-action="Index">@Localizer["Contact Us"]</a>
                     
                     @Html.Partial("_Langs")
                 </nav>
