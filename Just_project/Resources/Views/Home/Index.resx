@@ -132,8 +132,20 @@
   <data name="Pay_message" xml:space="preserve">
     <value>message</value>
   </data>
+  <data name="Refund" xml:space="preserve">
+    <value>refund</value>
+  </data>
+  <data name="refund_mess" xml:space="preserve">
+    <value>mess</value>
+  </data>
   <data name="Sale" xml:space="preserve">
     <value>sale</value>
+  </data>
+  <data name="shipping" xml:space="preserve">
+    <value>shipping</value>
+  </data>
+  <data name="shipping_message" xml:space="preserve">
+    <value>message</value>
   </data>
   <data name="Support_" xml:space="preserve">
     <value>online_support</value>
