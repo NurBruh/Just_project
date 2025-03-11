@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About Us" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Блог</value>
+  </data>
+  <data name="Contact Us" xml:space="preserve">
+    <value>Связаться с нами</value>
+  </data>
+  <data name="FAQs" xml:space="preserve">
+    <value>Часто задоваемые вопросы</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Главная страница</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value>Страницы</value>
+  </data>
+  <data name="Privacy Policy" xml:space="preserve">
+    <value>Авторская права</value>
+  </data>
+  <data name="Shop" xml:space="preserve">
+    <value>Магазин</value>
   </data>
 </root>
