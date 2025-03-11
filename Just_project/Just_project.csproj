@@ -29,6 +29,9 @@
 
   <ItemGroup>
     <Folder Include="Resources\Controller\" />
+    <Folder Include="Resources\Views\Blog\" />
+    <Folder Include="Resources\Views\Category\" />
+    <Folder Include="Resources\Views\Contact\" />
   </ItemGroup>
 
 </Project>
