@@ -129,8 +129,17 @@
   <data name="Payment" xml:space="preserve">
     <value>Икемді төлем</value>
   </data>
+  <data name="Pay_message" xml:space="preserve">
+    <value>Біз төлемдерге қатысты икемділіктің маңызды екенін түсінеміз.</value>
+  </data>
   <data name="Sale" xml:space="preserve">
     <value>Жеңілдіктерді көру</value>
+  </data>
+  <data name="Support_" xml:space="preserve">
+    <value>Онлайн қызмет көрсету</value>
+  </data>
+  <data name="support_mess" xml:space="preserve">
+    <value>Біздің арнайы онлайн қолдау көрсету тобымыз бір рет басу арқылы.</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>Барлық өнімдерді көру</value>

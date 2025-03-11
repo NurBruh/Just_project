@@ -129,8 +129,17 @@
   <data name="Payment" xml:space="preserve">
     <value>payment</value>
   </data>
+  <data name="Pay_message" xml:space="preserve">
+    <value>message</value>
+  </data>
   <data name="Sale" xml:space="preserve">
     <value>sale</value>
+  </data>
+  <data name="Support_" xml:space="preserve">
+    <value>online_support</value>
+  </data>
+  <data name="support_mess" xml:space="preserve">
+    <value>message</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>product</value>
