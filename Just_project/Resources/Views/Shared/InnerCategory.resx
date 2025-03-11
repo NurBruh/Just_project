@@ -138,4 +138,7 @@
   <data name="Service" xml:space="preserve">
     <value>service</value>
   </data>
+  <data name="Shop" xml:space="preserve">
+    <value>shop</value>
+  </data>
 </root>

@@ -138,4 +138,7 @@
   <data name="Service" xml:space="preserve">
     <value>Қызмет көрсету</value>
   </data>
+  <data name="Shop" xml:space="preserve">
+    <value>Дүкен</value>
+  </data>
 </root>
