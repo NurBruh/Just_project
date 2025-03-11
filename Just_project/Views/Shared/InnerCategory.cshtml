@@ -1,18 +1,21 @@
-﻿<!-- START OF HERO INNER SECTION -->
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<!-- START OF HERO INNER SECTION -->
 <section class="hero-inner text-center">
 	<div class="w-layout-blockcontainer container w-container">
 		<div class="hero-inner-wrap"><h1 class="hero-inner-title">Shop</h1></div>
 		<div class="hero-inner-overly"></div>
 		<div class="category-hero-list-wrap">
-			<a class="category-link" asp-controller="Shop" asp-action="Index">All</a>
+			<a class="category-link" asp-controller="Shop" asp-action="Index">Все</a>
 			<div class="w-dyn-list">
 				<div role="list" class="category-wrap w-dyn-items">
-					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Carpenter">Carpenter tool</a></div>
-					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Painting">Painting tool</a></div>
-					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Power">Power tool</a></div>
-					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Hand">Hand tool</a></div>
-					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Plumbing">Plumbing tool</a></div>
-					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Flathead">Flathead tool</a></div>
+					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Carpenter">@Localizer["Accessories"]</a></div>
+					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Painting">@Localizer["Ready-made PC builds"]</a></div>
+					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Power">@Localizer["Office PCs"]</a></div>
+					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Hand">@Localizer["Gaming PC"]</a></div>
+					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Plumbing">@Localizer["Service"]</a></div>
+					<div role="listitem" class="w-dyn-item"><a class="category-link" asp-controller="Category" asp-action="Flathead">@Localizer["Custom PC"]</a></div>
 				</div>
 			</div>
 		</div>
