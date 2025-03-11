@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -43,7 +46,7 @@
 	<div class="w-layout-blockcontainer container w-container">
 		<div class="product-top-wrap">
 			<h2 class="no-margin">Our products</h2>
-			<a href="/shop" class="button-dark w-button">View all products</a>
+			<a class="button-dark w-button" asp-controller="Shop" asp-action="Index">@* @Localizer["View all products"] *@View all products</a>
 		</div>
 		<div class="w-dyn-list">
 			<div class="grid-product w-dyn-items">
@@ -187,7 +190,7 @@
 		<div class="w-layout-grid grid-product-two">
 			<div class="product-title-wrap">
 				<div class="section-title"><h2>Feature collection</h2></div>
-				<a href="/shop" class="button-dark w-button">Shop collection</a>
+				<a class="button-dark w-button" asp-controller="Shop" asp-action="Index">Shop collection</a>
 			</div>
 			<div class="product-slide-wrap">
 				<div class="product-slider w-slider">

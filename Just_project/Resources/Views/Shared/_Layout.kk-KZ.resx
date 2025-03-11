@@ -120,17 +120,29 @@
   <data name="About Us" xml:space="preserve">
     <value>Біз туралы</value>
   </data>
+  <data name="All categories" xml:space="preserve">
+    <value>Категориялар</value>
+  </data>
   <data name="Blog" xml:space="preserve">
     <value>Блог</value>
   </data>
+  <data name="Contact Number" xml:space="preserve">
+    <value>Нөмір телефоны</value>
+  </data>
   <data name="Contact Us" xml:space="preserve">
     <value>Бізбен байланысу</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Электронды пошта</value>
   </data>
   <data name="FAQs" xml:space="preserve">
     <value>Жиі қойылатын сұрақтар</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Басты бет</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Біздің орналасқан жеріміз</value>
   </data>
   <data name="Pages" xml:space="preserve">
     <value>Беттер</value>
@@ -140,5 +152,8 @@
   </data>
   <data name="Shop" xml:space="preserve">
     <value>Дүкен</value>
+  </data>
+  <data name="View all products" xml:space="preserve">
+    <value>Барлық өнімдерді көру</value>
   </data>
 </root>
