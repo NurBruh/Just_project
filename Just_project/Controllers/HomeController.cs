@@ -6,8 +6,8 @@ namespace Just_project.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IMessage _sender;
+        private readonly ILogger<HomeController>? _logger;
+        private readonly IMessage? _sender;
 
         //public HomeController(ILogger<HomeController> logger, IMessage sender)
         //{
