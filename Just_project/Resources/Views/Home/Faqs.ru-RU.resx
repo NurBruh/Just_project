@@ -117,11 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>Как я могу изменить свой адрес?</value>
+  </data>
+  <data name="Address_mess" xml:space="preserve">
+    <value>Перейдите на сайт или платформу, где вы совершили покупку, и войдите в свою учетную запись, используя свое имя пользователя и пароль. Найдите возможность доступа к настройкам учетной записи или информации профиля.</value>
+  </data>
   <data name="Cancer" xml:space="preserve">
     <value>Что делать, если заказ поврежден или в нем отсутствует какой-либо товар?</value>
   </data>
   <data name="Cancer_mess" xml:space="preserve">
     <value>Если вы получили поврежденный заказ или в нем отсутствует какой-либо товар, вам следует как можно скорее связаться с компанией или магазином, где вы совершили покупку, чтобы сообщить о проблеме.</value>
+  </data>
+  <data name="Dostavka" xml:space="preserve">
+    <value>Куда отправляется товар Minori?</value>
+  </data>
+  <data name="Dostavka_mess" xml:space="preserve">
+    <value>Чтобы узнать, осуществляет ли Minori доставку в ваш регион, вы можете посетить их веб-сайт и проверить информацию о доставке или правила. Кроме того, вы можете напрямую связаться с их службой поддержки клиентов для получения помощи.</value>
+  </data>
+  <data name="faqs_item" xml:space="preserve">
+    <value>Доставка и возврат:</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>Как получить право на бесплатную доставку?</value>
+  </data>
+  <data name="Free_mess" xml:space="preserve">
+    <value>Некоторые товары могут иметь право на бесплатную доставку, независимо от стоимости заказа. Компании могут предлагать бесплатную доставку для определенных продуктов или категорий продуктов в рамках текущих акций.</value>
   </data>
   <data name="Items" xml:space="preserve">
     <value>Товары:</value>
@@ -137,6 +158,12 @@
   </data>
   <data name="Zakaz" xml:space="preserve">
     <value>Могу ли я отменить/изменить свой заказ?</value>
+  </data>
+  <data name="Zakaz1" xml:space="preserve">
+    <value>Могу ли я изменить или отменить свой заказ?</value>
+  </data>
+  <data name="Zakaz1_mess" xml:space="preserve">
+    <value>Сначала проверьте статус вашего заказа. Если он все еще обрабатывается или еще не отправлен, у вас может быть больше шансов изменить или отменить его.</value>
   </data>
   <data name="Zakaz_mess" xml:space="preserve">
     <value>Если вы оформили заказ и вам необходимо отменить его или внести в него изменения, вам следует как можно скорее связаться с компанией или магазином, в котором вы совершили покупку.</value>

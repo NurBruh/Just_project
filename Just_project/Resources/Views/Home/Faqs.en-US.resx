@@ -117,11 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>How to change my address?</value>
+  </data>
+  <data name="Address_mess" xml:space="preserve">
+    <value>Go to the website or platform where you made the purchase and log in to your account using your username and password. Find the option to access your account settings or profile information.</value>
+  </data>
   <data name="Cancer" xml:space="preserve">
     <value>What should I do if the order is damaged or some item is missing?</value>
   </data>
   <data name="Cancer_mess" xml:space="preserve">
     <value>If you receive a damaged order or any item is missing, you should contact the company or store where you made the purchase as soon as possible to report the problem.</value>
+  </data>
+  <data name="Dostavka" xml:space="preserve">
+    <value>Where does the Minori product go?</value>
+  </data>
+  <data name="Dostavka_mess" xml:space="preserve">
+    <value>To find out if Minori delivers to your region, you can visit their website and check the shipping information or rules. Alternatively, you can contact their customer support team directly for assistance.</value>
+  </data>
+  <data name="faqs_item" xml:space="preserve">
+    <value>Delivery and return:</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>How do I qualify for free shipping?</value>
+  </data>
+  <data name="Free_mess" xml:space="preserve">
+    <value>Some items may be eligible for free shipping, regardless of the cost of the order. Companies may offer free shipping for certain products or product categories as part of ongoing promotions.</value>
   </data>
   <data name="Items" xml:space="preserve">
     <value>Items:</value>
@@ -137,6 +158,12 @@
   </data>
   <data name="Zakaz" xml:space="preserve">
     <value>Can I cancel/change my order?</value>
+  </data>
+  <data name="Zakaz1" xml:space="preserve">
+    <value>Can I change or cancel my order?</value>
+  </data>
+  <data name="Zakaz1_mess" xml:space="preserve">
+    <value>First, check the status of your order. If it's still being processed or hasn't been sent yet, you may have a better chance of changing or canceling it.</value>
   </data>
   <data name="Zakaz_mess" xml:space="preserve">
     <value>If you have placed an order and you need to cancel it or make changes to it, you should contact the company or store where you made the purchase as soon as possible.</value>

@@ -117,11 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>drgdrh</value>
+  </data>
+  <data name="Address_mess" xml:space="preserve">
+    <value>ethtnhyj</value>
+  </data>
   <data name="Cancer" xml:space="preserve">
     <value>f</value>
   </data>
   <data name="Cancer_mess" xml:space="preserve">
     <value>f</value>
+  </data>
+  <data name="Dostavka" xml:space="preserve">
+    <value>erger</value>
+  </data>
+  <data name="Dostavka_mess" xml:space="preserve">
+    <value>segfseg</value>
+  </data>
+  <data name="faqs_item" xml:space="preserve">
+    <value>rthrt</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>snsryjjryyjtnj</value>
+  </data>
+  <data name="Free_mess" xml:space="preserve">
+    <value>rthrth</value>
   </data>
   <data name="Items" xml:space="preserve">
     <value>Items</value>
@@ -137,6 +158,12 @@
   </data>
   <data name="Zakaz" xml:space="preserve">
     <value>f</value>
+  </data>
+  <data name="Zakaz1" xml:space="preserve">
+    <value>gr</value>
+  </data>
+  <data name="Zakaz1_mess" xml:space="preserve">
+    <value>gtrgt</value>
   </data>
   <data name="Zakaz_mess" xml:space="preserve">
     <value>f</value>
