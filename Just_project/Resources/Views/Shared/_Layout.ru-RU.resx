@@ -126,8 +126,20 @@
   <data name="All categories" xml:space="preserve">
     <value>Все категорий </value>
   </data>
+  <data name="Bag" xml:space="preserve">
+    <value>В вашей сумке нет продуктов.</value>
+  </data>
   <data name="Blog" xml:space="preserve">
     <value>Блог</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>Ваша корзина</value>
+  </data>
+  <data name="Cart_error" xml:space="preserve">
+    <value>Продукт недоступен в таком количестве.</value>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Продолжайте оформлять заказ</value>
   </data>
   <data name="Contact Number" xml:space="preserve">
     <value>Номер телефона</value>
@@ -147,6 +159,9 @@
   <data name="Location" xml:space="preserve">
     <value>Наше местоположение</value>
   </data>
+  <data name="Open_cart" xml:space="preserve">
+    <value>Открыть корзину</value>
+  </data>
   <data name="Pages" xml:space="preserve">
     <value>Страницы</value>
   </data>
@@ -159,11 +174,20 @@
   <data name="Privacy Policy" xml:space="preserve">
     <value>Авторская права</value>
   </data>
+  <data name="Product" xml:space="preserve">
+    <value>Название продукта</value>
+  </data>
   <data name="Refund" xml:space="preserve">
     <value>Легкий возврат</value>
   </data>
   <data name="refund_mess" xml:space="preserve">
     <value>Совершайте покупки с уверенностью, что наша простая политика возврата средств вам поможет.</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Remove_mess" xml:space="preserve">
+    <value>Удалить товар из корзины</value>
   </data>
   <data name="shipping" xml:space="preserve">
     <value>Бесплатная доставка</value>
@@ -174,11 +198,20 @@
   <data name="Shop" xml:space="preserve">
     <value>Магазин</value>
   </data>
+  <data name="Shopping" xml:space="preserve">
+    <value>Начать покупку</value>
+  </data>
+  <data name="Span_opt" xml:space="preserve">
+    <value>Вариант:</value>
+  </data>
   <data name="Support_" xml:space="preserve">
     <value>Онлайн поддержка</value>
   </data>
   <data name="support_mess" xml:space="preserve">
     <value>Наша специализированная команда онлайн-поддержки находится всего в одном клике от вас.</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Стоимость</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>Посмотреть все продукты</value>

@@ -111,7 +111,7 @@
                         <div style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar" data-node-type="commerce-cart-container-wrapper">
                             <div data-node-type="commerce-cart-container" role="dialog" class="w-commerce-commercecartcontainer">
                                 <div class="w-commerce-commercecartheader">
-                                    <h5 class="w-commerce-commercecartheading">Ваша корзина</h5>
+                                    <h5 class="w-commerce-commercecartheading">@Localizer["Cart"]</h5>
                                     <a class="w-commerce-commercecartcloselink w-inline-block" role="button" aria-label="Close cart" data-node-type="commerce-cart-close-link">
                                         <svg width="16px" height="16px" viewBox="0 0 16 16">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -128,16 +128,16 @@
                                             <div class="w-commerce-commercecartitem">
                                                 <img src="" alt="" class="w-commerce-commercecartitemimage" />
                                                 <div class="w-commerce-commercecartiteminfo">
-                                                    <div class="w-commerce-commercecartproductname">Product Name</div>
+                                                    <div class="w-commerce-commercecartproductname">@Localizer["Product"]</div>
                                                     <div>$0.00 USD</div>
                                                     <ul class="w-commerce-commercecartoptionlist">
                                                         <li>
-                                                            <span>Option:</span>
-                                                            <span>Value</span>
+                                                            <span>@Localizer["Span_opt"]</span>
+                                                            <span>@Localizer["Value"]</span>
                                                         </li>
                                                     </ul>
-                                                    <a href="#" role="button" class="w-inline-block" aria-label="Remove item from cart">
-                                                        <div>Remove</div>
+                                                    <a href="#" role="button" class="w-inline-block" aria-label="@Localizer["Remove_mess"]">
+                                                        <div>@Localizer["Remove"]</div>
                                                     </a>
                                                 </div>
                                                 <input aria-label="Update quantity" class="w-commerce-commercecartquantity cart-quantity" type="number" name="quantity" value="1" />
@@ -150,7 +150,7 @@
                                             </div>
                                             <div>
                                                 <a value="Continue to Checkout" class="w-commerce-commercecartcheckoutbutton button-dark" asp-controller="Checkout" asp-action="Index">
-                                                    Continue to Checkout
+                                                    @Localizer["Checkout"]
                                                 </a>
                                             </div>
                                         </div>
@@ -158,12 +158,12 @@
                                     <div class="w-commerce-commercecartemptystate empty-state-wrap">
                                         <img src="~/images/empty-cart-image.svg" loading="lazy" alt="image" class="cart-image" />
                                         <div class="empty-state-content">
-                                            <p>No products inside your bag.</p>
-                                            <a asp-controller="Shop" asp-action="Index" class="button-dark w-button">Начать покупку</a>
+                                            <p>@Localizer["Bag"]</p>
+                                            <a asp-controller="Shop" asp-action="Index" class="button-dark w-button">@Localizer["Shopping"]</a>
                                         </div>
                                     </div>
                                     <div aria-live="assertive" style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate error-message">
-                                        <div class="w-cart-error-msg">Product is not available in this quantity.</div>
+                                        <div class="w-cart-error-msg">@Localizer["Cart_error"]</div>
                                     </div>
                                 </div>
                             </div>

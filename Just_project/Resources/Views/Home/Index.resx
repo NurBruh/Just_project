@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Blogs_view" xml:space="preserve">
+    <value>blogs</value>
+  </data>
+  <data name="Build" xml:space="preserve">
+    <value>builder</value>
+  </data>
   <data name="First_sales" xml:space="preserve">
     <value>sales</value>
   </data>
@@ -126,11 +132,20 @@
   <data name="Nasslad" xml:space="preserve">
     <value>nasslad</value>
   </data>
+  <data name="Parts" xml:space="preserve">
+    <value>parts</value>
+  </data>
+  <data name="Parts_shop" xml:space="preserve">
+    <value>shop</value>
+  </data>
   <data name="Payment" xml:space="preserve">
     <value>payment</value>
   </data>
   <data name="Pay_message" xml:space="preserve">
     <value>message</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>product</value>
   </data>
   <data name="Refund" xml:space="preserve">
     <value>refund</value>
@@ -140,6 +155,12 @@
   </data>
   <data name="Sale" xml:space="preserve">
     <value>sale</value>
+  </data>
+  <data name="Save_" xml:space="preserve">
+    <value>saving_sale</value>
+  </data>
+  <data name="save_mess" xml:space="preserve">
+    <value>message</value>
   </data>
   <data name="shipping" xml:space="preserve">
     <value>shipping</value>
@@ -152,6 +173,9 @@
   </data>
   <data name="support_mess" xml:space="preserve">
     <value>message</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>update</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>product</value>

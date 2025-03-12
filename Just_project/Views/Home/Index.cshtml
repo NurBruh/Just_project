@@ -45,7 +45,7 @@
 <section class="product-section section-spacing">
 	<div class="w-layout-blockcontainer container w-container">
 		<div class="product-top-wrap">
-			<h2 class="no-margin">Наши продукты</h2>
+			<h2 class="no-margin">@Localizer["Products"]</h2>
 			<a class="button-dark w-button" asp-controller="Shop" asp-action="Index"> @Localizer["View all products"]</a>
 		</div>
 		<div class="w-dyn-list">
@@ -117,11 +117,11 @@
 			<div class="cta-overly"></div>
 			<div class="w-layout-grid grid-cta">
 				<div class="cta-title-wrap">
-					<h3 class="cta-title"> Сохраните до <span class="primary-span">20%</span></h3>
-					<p class="cta-description"> Просмотрите все скидки на наши сборки и выберите для себя. </p>
+					<h3 class="cta-title"> @Localizer["Save_"] <span class="primary-span">20%</span></h3>
+					<p class="cta-description"> @Localizer["save_mess"] </p>
 				</div>
 				<div class="cta-button-wrap">
-					<a href="/sale-product" class="button-white w-button">Сборки со скидкой </a>
+					<a href="/sale-product" class="button-white w-button">@Localizer["Build"] </a>
 				</div>
 			</div>
 		</div>
@@ -133,8 +133,8 @@
 	<div class="w-layout-blockcontainer container w-container">
 		<div class="w-layout-grid grid-product-two">
 			<div class="product-title-wrap">
-				<div class="section-title"><h2>Комплектующие</h2></div>
-				<a class="button-dark w-button" asp-controller="Shop" asp-action="Index">Магазин комплектующих</a>
+				<div class="section-title"><h2>@Localizer["Parts"]</h2></div>
+				<a class="button-dark w-button" asp-controller="Shop" asp-action="Index">@Localizer["Parts_shop"]</a>
 			</div>
 			<div class="product-slide-wrap">
 				<div class="product-slider w-slider">
@@ -411,8 +411,8 @@
 <section class="blog-section section-spacing">
 	<div class="container w-container">
 		<div class="blog-top-wrap">
-			<h2 class="no-margin">Обновления</h2>
-			<a href="/blog" class="button-dark w-button">Просмотрите все блоги</a>
+			<h2 class="no-margin">@Localizer["Update"]</h2>
+			<a class="button-dark w-button" asp-controller="Blog" asp-action="Index">@Localizer["Blogs_view"]</a>
 		</div>
 		<div class="w-dyn-list">
 			<div class="grid-blog w-dyn-items">

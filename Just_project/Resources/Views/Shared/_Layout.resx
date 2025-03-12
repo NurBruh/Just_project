@@ -126,8 +126,20 @@
   <data name="All categories" xml:space="preserve">
     <value>category</value>
   </data>
+  <data name="Bag" xml:space="preserve">
+    <value>bag</value>
+  </data>
   <data name="Blog" xml:space="preserve">
     <value>blog</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>cart</value>
+  </data>
+  <data name="Cart_error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>checkout</value>
   </data>
   <data name="Contact Number" xml:space="preserve">
     <value>number</value>
@@ -147,6 +159,9 @@
   <data name="Location" xml:space="preserve">
     <value>location</value>
   </data>
+  <data name="Open_cart" xml:space="preserve">
+    <value>cart</value>
+  </data>
   <data name="Pages" xml:space="preserve">
     <value>pages</value>
   </data>
@@ -159,11 +174,20 @@
   <data name="Privacy Policy" xml:space="preserve">
     <value>privacy</value>
   </data>
+  <data name="Product" xml:space="preserve">
+    <value>product name</value>
+  </data>
   <data name="Refund" xml:space="preserve">
     <value>rufund</value>
   </data>
   <data name="refund_mess" xml:space="preserve">
     <value>mess</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>remove</value>
+  </data>
+  <data name="Remove_mess" xml:space="preserve">
+    <value>remove message</value>
   </data>
   <data name="shipping" xml:space="preserve">
     <value>ship</value>
@@ -174,11 +198,20 @@
   <data name="Shop" xml:space="preserve">
     <value>shop</value>
   </data>
+  <data name="Shopping" xml:space="preserve">
+    <value>shop</value>
+  </data>
+  <data name="Span_opt" xml:space="preserve">
+    <value>span_option</value>
+  </data>
   <data name="Support_" xml:space="preserve">
     <value>sup</value>
   </data>
   <data name="support_mess" xml:space="preserve">
     <value>message</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>value</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>products</value>

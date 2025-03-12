@@ -1,10 +1,13 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
 	ViewData["Title"] = "About Us";
 }
 <!-- START OF ABOUT HERO SECTION -->
 <section class="about-hero-section">
 	<div class="w-layout-blockcontainer container w-container">
-		<h1 class="about-hero-title text-center">Присоединяйтесь к нам <span class="primary-span">и живите</span> на светлой стороне жизни.</h1>
+		<h1 class="about-hero-title text-center">@Localizer["Join"] <span class="primary-span">@Localizer["Life"]</span> @Localizer["Sweet"]</h1>
 		<div class="w-layout-grid grid-about-hero">
 			<div class="about-hero-image-wrap">
 				<img src="~/images/Window.jpeg" loading="lazy" sizes="(max-width: 479px) 94vw, (max-width: 991px) 96vw, (max-width: 1063px) 94vw, 1000px" alt="image" class="about-hero-image" />
@@ -22,19 +25,19 @@
 		<div class="w-layout-grid grid-counter">
 			<div class="counter-wrap">
 				<h2 class="counter-number">200<span class="primary-span">+</span></h2>
-				<div>Всего товаров</div>
+				<div>@Localizer["Product"]</div>
 			</div>
 			<div class="counter-wrap">
 				<h2 class="counter-number">350<span class="primary-span">+</span></h2>
-				<div>Довольные клиенты</div>
+				<div>@Localizer["Clients"]</div>
 			</div>
 			<div class="counter-wrap">
 				<h2 class="counter-number">5K<span class="primary-span">+</span></h2>
-				<div>Всего отзывов</div>
+				<div>@Localizer["Reviews"]</div>
 			</div>
 			<div class="counter-wrap">
 				<h2 class="counter-number">10<span class="primary-span">+</span></h2>
-				<div>Многолетний опыт</div>
+				<div>@Localizer["Experience"]</div>
 			</div>
 		</div>
 	</div>
@@ -43,33 +46,33 @@
 <!-- START OF MARQUEE SECTION -->
 <div class="marquee-simple-item">
 	<div class="marquee-list">
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
-		<div class="marquee-text">Бесплатная доставка при заказе свыше 45000 тенге</div>
+		<div class="marquee-text">@Localizer["Marquee"]</div>
 		<div class="marquee-dot"></div>
 	</div>
 </div>
@@ -77,18 +80,18 @@
 <!-- START OF ABOUT TABS SECTION -->
 <section class="about-tab-simple-section">
 	<div class="w-layout-blockcontainer container w-container">
-		<h3 class="about-two-title"><span class="about-split-span"></span>В <span class="primary-span">PC-UN</span> мы выделяемся как ваш конечный пункт назначения для инструментов и аксессуаров, предлагая безупречный и обогащающий опыт для мастеров и творцов. Мы ваш преданный партнер в путешествии творения.</h3>
+		<h3 class="about-two-title"><span class="about-split-span"></span>@Localizer["About_split"] <span class="primary-span">PC-UN</span> @Localizer["About_bruh"]</h3>
 		<div class="about-tabs w-tabs">
 			<div class="about-tabs-menu w-tab-menu">
-				<a data-w-tab="Tab 1" class="about-tab-dark-link w-inline-block w-tab-link"><div class="about-tab-title">Миссия</div></a>
-				<a data-w-tab="Tab 2" class="about-tab-dark-link w-inline-block w-tab-link w--current"><div class="about-tab-title">Обязательства</div></a>
-				<a data-w-tab="Tab 3" class="about-tab-dark-link w-inline-block w-tab-link"><div class="about-tab-title">Ценить</div></a>
+				<a data-w-tab="Tab 1" class="about-tab-dark-link w-inline-block w-tab-link"><div class="about-tab-title">@Localizer["Mission"]</div></a>
+				<a data-w-tab="Tab 2" class="about-tab-dark-link w-inline-block w-tab-link w--current"><div class="about-tab-title">@Localizer["Liabilities"]</div></a>
+				<a data-w-tab="Tab 3" class="about-tab-dark-link w-inline-block w-tab-link"><div class="about-tab-title">@Localizer["Appreciate"]</div></a>
 			</div>
 			<div class="w-tab-content">
 				<div data-w-tab="Tab 1" class="w-tab-pane">
 					<div class="about-tab-info">
 						<div class="about-tab-detail">
-							<p class="no-margin">В миссии тщательное планирование и стратегическое исполнение объединяются для достижения предопределенных целей. Это включает в себя выбор и развертывание специализированных.</p>
+							<p class="no-margin">@Localizer["Mis_span"]</p>
 						</div>
 						<div class="about-tab-image-wrap"><img src="~/images/pc-building021.png" loading="lazy" alt="image" class="about-tab-image" /></div>
 					</div>
@@ -96,7 +99,7 @@
 				<div data-w-tab="Tab 2" class="w-tab-pane w--tab-active">
 					<div class="about-tab-info">
 						<div class="about-tab-detail">
-							<p class="no-margin">Наши обязательства являются основой наших отношений с вами, гарантируя, что вы получите не только качественную продукцию, но и непревзойденный сервис и поддержку.</p>
+							<p class="no-margin">@Localizer["About_tab"]</p>
 						</div>
 						<div class="about-tab-image-wrap"><img src="~/images/pc-parts.png" loading="lazy" alt="image" class="about-tab-image" /></div>
 					</div>
@@ -104,7 +107,7 @@
 				<div data-w-tab="Tab 3" class="w-tab-pane">
 					<div class="about-tab-info">
 						<div class="about-tab-detail">
-							<p class="no-margin">Наша ценность часто отражает общую эффективность оборудования в достижении желаемых результатов. Сюда входят такие факторы, как надежность, долговечность и универсальность.</p>
+							<p class="no-margin">@Localizer["Tab_3"]</p>
 						</div>
 						<div class="about-tab-image-wrap"><img src="~/images/valuespc.png" loading="lazy" alt="image" class="about-tab-image" /></div>
 					</div>
@@ -141,4 +144,4 @@
 		</div>
 	</div>
 </section>
-<!-- END OF FEATURE TWO SECTION --> *@a
+<!-- END OF FEATURE TWO SECTION --> *@

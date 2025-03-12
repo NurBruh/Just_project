@@ -126,8 +126,20 @@
   <data name="All categories" xml:space="preserve">
     <value>Категориялар</value>
   </data>
+  <data name="Bag" xml:space="preserve">
+    <value>Сіздің сөмкеңізде өнім жоқ.</value>
+  </data>
   <data name="Blog" xml:space="preserve">
     <value>Блог</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>Сіздің арбаңыз</value>
+  </data>
+  <data name="Cart_error" xml:space="preserve">
+    <value>Өнім мұндай мөлшерде қол жетімді емес.</value>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Тапсырысты рәсімдеуді жалғастырыңыз</value>
   </data>
   <data name="Contact Number" xml:space="preserve">
     <value>Нөмір телефоны</value>
@@ -147,6 +159,9 @@
   <data name="Location" xml:space="preserve">
     <value>Біздің орналасқан жеріміз</value>
   </data>
+  <data name="Open_cart" xml:space="preserve">
+    <value>Себетті ашу</value>
+  </data>
   <data name="Pages" xml:space="preserve">
     <value>Беттер</value>
   </data>
@@ -159,11 +174,20 @@
   <data name="Privacy Policy" xml:space="preserve">
     <value>Авторлық құқық</value>
   </data>
+  <data name="Product" xml:space="preserve">
+    <value>Тауардың атауы</value>
+  </data>
   <data name="Refund" xml:space="preserve">
     <value>Оңай қайтару</value>
   </data>
   <data name="refund_mess" xml:space="preserve">
     <value>Біздің оңай қайтару саясатымыз сізге көмектесетініне сенімді түрде сатып алыңыз.</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="Remove_mess" xml:space="preserve">
+    <value>Өнімді Себеттен алып тастаңыз</value>
   </data>
   <data name="shipping" xml:space="preserve">
     <value>Тегін жеткізу</value>
@@ -174,11 +198,20 @@
   <data name="Shop" xml:space="preserve">
     <value>Дүкен</value>
   </data>
+  <data name="Shopping" xml:space="preserve">
+    <value>Сатып алуды бастаңыз</value>
+  </data>
+  <data name="Span_opt" xml:space="preserve">
+    <value>Вариант:</value>
+  </data>
   <data name="Support_" xml:space="preserve">
     <value>Онлайн қызмет көрсету</value>
   </data>
   <data name="support_mess" xml:space="preserve">
     <value>Біздің арнайы онлайн қолдау көрсету тобымыз бір рет басу арқылы.</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Бағасы</value>
   </data>
   <data name="View all products" xml:space="preserve">
     <value>Барлық өнімдерді көру</value>

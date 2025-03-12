@@ -117,52 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About_bruh" xml:space="preserve">
-    <value>мы выделяемся как ваш конечный пункт назначения для инструментов и аксессуаров, предлагая безупречный и обогащающий опыт для мастеров и творцов.</value>
+  <data name="Cancer" xml:space="preserve">
+    <value>What should I do if the order is damaged or some item is missing?</value>
   </data>
-  <data name="About_split" xml:space="preserve">
-    <value>В</value>
+  <data name="Cancer_mess" xml:space="preserve">
+    <value>If you receive a damaged order or any item is missing, you should contact the company or store where you made the purchase as soon as possible to report the problem.</value>
   </data>
-  <data name="About_tab" xml:space="preserve">
-    <value>Наши обязательства являются основой наших отношений с вами, гарантируя, что вы получите не только качественную продукцию, но и непревзойденный сервис и поддержку.</value>
+  <data name="Items" xml:space="preserve">
+    <value>Items:</value>
   </data>
-  <data name="Appreciate" xml:space="preserve">
-    <value>Ценить</value>
+  <data name="Questions" xml:space="preserve">
+    <value>FAQs</value>
   </data>
-  <data name="Clients" xml:space="preserve">
-    <value>Довольные клиенты</value>
+  <data name="What" xml:space="preserve">
+    <value>The package is lost. What to do?</value>
   </data>
-  <data name="Experience " xml:space="preserve">
-    <value>Многолетний опыт</value>
+  <data name="What_mess" xml:space="preserve">
+    <value>Start by checking the delivery status online or contact the shipping company to confirm if the package has actually been lost. Sometimes there may be delays or misunderstandings that lead to the parcel becoming temporary.</value>
   </data>
-  <data name="Join" xml:space="preserve">
-    <value>Присоединяйтесь к нам и</value>
+  <data name="Zakaz" xml:space="preserve">
+    <value>Can I cancel/change my order?</value>
   </data>
-  <data name="Liabilities" xml:space="preserve">
-    <value>Обязательства</value>
-  </data>
-  <data name="Life" xml:space="preserve">
-    <value>живите</value>
-  </data>
-  <data name="Marquee" xml:space="preserve">
-    <value>Бесплатная доставка при заказе свыше 45000 тенге</value>
-  </data>
-  <data name="Mission" xml:space="preserve">
-    <value>Миссия</value>
-  </data>
-  <data name="Mis_span" xml:space="preserve">
-    <value>В миссии тщательное планирование и стратегическое исполнение объединяются для достижения предопределенных целей. Это включает в себя выбор и развертывание специализированных.</value>
-  </data>
-  <data name="Product" xml:space="preserve">
-    <value>Всего товаров</value>
-  </data>
-  <data name="Reviews" xml:space="preserve">
-    <value>Всего отзывов</value>
-  </data>
-  <data name="Sweet" xml:space="preserve">
-    <value>на светлой стороне жизни.</value>
-  </data>
-  <data name="Tab_3" xml:space="preserve">
-    <value>Наша ценность часто отражает общую эффективность оборудования в достижении желаемых результатов. Сюда входят такие факторы, как надежность, долговечность и универсальность.</value>
+  <data name="Zakaz_mess" xml:space="preserve">
+    <value>If you have placed an order and you need to cancel it or make changes to it, you should contact the company or store where you made the purchase as soon as possible.</value>
   </data>
 </root>

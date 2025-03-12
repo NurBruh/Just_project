@@ -1,11 +1,14 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
     ViewData["Title"] = "FAQs";
 }
 <!-- HERO INNER SECTION -->
 <section class="hero-inner text-center">
     <div class="container w-container">
         <div class="hero-inner-wrap">
-            <h1 class="hero-inner-title">Часто задоваемые вопросы</h1>
+            <h1 class="hero-inner-title">@Localizer["Questions"]</h1>
         </div>
         <div class="hero-inner-overly"></div>
     </div>
@@ -17,7 +20,7 @@
         <div class="faqs-wrap">
             <!-- PRODUCTS FAQS -->
             <div class="faqs-item">
-                <h2 class="heading-h3">Товары:</h2>
+                <h2 class="heading-h3">@Localizer["Items"]</h2>
                 <div class="accordion-item-wrap">
                     <div class="accordion-item">
                         <!-- FAQ ITEM 1 -->
@@ -25,13 +28,13 @@
                             <div class="accordion-heading">
                                 <div class="accordion-number">Q.1</div>
                                 <div class="accordion-title-wrap">
-                                    <h3 class="accordion-title">Посылка утеряна. Что делать?</h3>
+                                    <h3 class="accordion-title">@Localizer["What"]</h3>
                                     <img src="~/images/chevron-down.svg" loading="lazy" alt="image" class="accordion-icon" />
                                 </div>
                             </div>
                             <div class="accordion-content">
                                 <p class="accordion-description">
-                                    Начните с проверки статуса доставки онлайн или свяжитесь с транспортной компанией, чтобы подтвердить, действительно ли посылка была утеряна. Иногда могут быть задержки или недопонимания, которые приводят к тому, что посылка становится временной.
+                                    @Localizer["What_mess"]
                                 </p>
                             </div>
                         </div>
@@ -40,13 +43,13 @@
                             <div class="accordion-heading">
                                 <div class="accordion-number">Q.2</div>
                                 <div class="accordion-title-wrap">
-                                    <h3 class="accordion-title">Могу ли я отменить/изменить свой заказ?</h3>
+                                    <h3 class="accordion-title">@Localizer["Zakaz"]</h3>
                                     <img src="~/images/chevron-down.svg" loading="lazy" alt="image" class="accordion-icon" />
                                 </div>
                             </div>
                             <div class="accordion-content">
                                 <p class="accordion-description">
-                                    Если вы оформили заказ и вам необходимо отменить его или внести в него изменения, вам следует как можно скорее связаться с компанией или магазином, в котором вы совершили покупку.
+                                    @Localizer["Zakaz_mess"]
                                 </p>
                             </div>
                         </div>
@@ -55,13 +58,16 @@
                             <div class="accordion-heading">
                                 <div class="accordion-number">Q.3</div>
                                 <div class="accordion-title-wrap">
-                                    <h3 class="accordion-title">Что делать, если заказ поврежден или в нем отсутствует какой-либо товар?</h3>
+                                    <h3 class="accordion-title">
+                                        @Localizer["Cancer"]
+                                        
+                                        </h3>
                                     <img src="~/images/chevron-down.svg" loading="lazy" alt="image" class="accordion-icon" />
                                 </div>
                             </div>
                             <div class="accordion-content">
                                 <p class="accordion-description">
-                                    Если вы получили поврежденный заказ или в нем отсутствует какой-либо товар, вам следует как можно скорее связаться с компанией или магазином, где вы совершили покупку, чтобы сообщить о проблеме.
+                                    @Localizer["Cancer_mess"]
                                 </p>
                             </div>
                         </div>
