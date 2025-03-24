@@ -8,5 +8,10 @@ namespace Just_project.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult RedirectToFaqs()
+        {
+            return RedirectToRoute("default", new { controller = "Faqs", action = "Index" });
+        }
     }
 }

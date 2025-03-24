@@ -8,5 +8,10 @@ namespace Just_project.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult RedirectToShop()
+        {
+            return RedirectToRoute("default", new { controller = "Shop", action = "Index" });
+        }
     }
 }
