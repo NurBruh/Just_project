@@ -7,8 +7,29 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<AppIdentityDbContext>(
+    options => options.UseSqlServer(connection));
+
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppIdentityDbContext>()
+    .AddDefaultTokenProviders();
+
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    
+});
+
+builder.Services.AddControllersWithViews();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews()
@@ -29,40 +50,27 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 
 });
 
-string connection = builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<AppIdentityDbContext>(
-    options => options.UseSqlServer(connection));
-
-builder.Services.AddIdentity<AppUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppIdentityDbContext>()
-    .AddDefaultTokenProviders();
-
-builder.Services.ConfigureApplicationCookie
-    (option => option.LoginPath = "/Account/Login");
-
-//builder.Services.AddControllersWithViews()
-//    .AddViewLocalization()  
-//    .AddDataAnnotationsLocalization();
-
-//builder.Services.AddLocalization(options => options.ResourcesPath = "Resources")
-//    .AddControllersWithViews()
-//    .AddViewLocalization()
-//    .AddDataAnnotationsLocalization();
 
 
 
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 
-//var supportedCultures = new[] {
-//    "en-US",
-//    "ru-RU",
-//    "kk-KZ"
-//};
 
-//var localizationOptions = new RequestLocalizationOptions()
-//    .AddSupportedCultures(supportedCultures).AddSupportedUICultures(supportedCultures);
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .MinimumLevel.Debug()
+    .WriteTo.Seq("http://localhost:5341")
+    .WriteTo.Console()
+    .WriteTo.File("Logs/hotelatrlogs_.txt", rollingInterval: RollingInterval.Day)
+    .Enrich.FromLogContext()
+    .CreateLogger();
 
+
+
+builder.Host.UseSerilog();
 
 
 var app = builder.Build();
@@ -83,6 +91,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();
 
 app.UseAuthorization();
 
