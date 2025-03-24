@@ -1,0 +1,46 @@
+﻿@model Just_project.Models.Login
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="contact-hero-section">
+    <div class="container w-container">
+        <div class="contact-title-wrap text-center">
+            <h1 class="contact-title">Login</h1>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTACT FORM SECTION -->
+<section class="contact-section section-spacing-bottom">
+    <div class="w-layout-blockcontainer container-small w-container">
+        <div id="w-node-b71607e3-87a8-286c-14db-670e3447869e-3a4aea85" class="contact-form">
+            <div class="w-form">
+
+                <form asp-action="Login" method="post">
+
+                    <div class="form-group">
+                        <label asp-for="UserName"></label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" type="password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

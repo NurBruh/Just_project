@@ -159,6 +159,9 @@
   <data name="Location" xml:space="preserve">
     <value>location</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>login</value>
+  </data>
   <data name="Open_cart" xml:space="preserve">
     <value>cart</value>
   </data>

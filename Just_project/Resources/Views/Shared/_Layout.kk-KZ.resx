@@ -159,6 +159,9 @@
   <data name="Location" xml:space="preserve">
     <value>Біздің орналасқан жеріміз</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>Кіру</value>
+  </data>
   <data name="Open_cart" xml:space="preserve">
     <value>Себетті ашу</value>
   </data>

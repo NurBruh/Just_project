@@ -63,6 +63,7 @@
                     </div>
                     <a class="nav-link w-nav-link" asp-controller="Blog" asp-action="Index">@Localizer["Blog"]</a>
                     <a class="nav-link w-nav-link" asp-controller="Contact" asp-action="Index">@Localizer["Contact Us"]</a>
+                    <a class="nav-link w-nav-link" asp-controller="Account" asp-action="Login">@Localizer["Login"]</a>
                     
                     @Html.Partial("_Langs")
                 </nav>
@@ -231,5 +232,6 @@
     });
 }
     </script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
