@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113
+VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Just_project", "Just_project\Just_project.csproj", "{46B70C90-5197-4968-9014-C715B2396AC2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Just_project.Admin", "Just_project.Admin\Just_project.Admin.csproj", "{8E258A2A-552E-43DB-9D00-949DB534AECB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,15 +15,8 @@ Global
 		{46B70C90-5197-4968-9014-C715B2396AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46B70C90-5197-4968-9014-C715B2396AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46B70C90-5197-4968-9014-C715B2396AC2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E258A2A-552E-43DB-9D00-949DB534AECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E258A2A-552E-43DB-9D00-949DB534AECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E258A2A-552E-43DB-9D00-949DB534AECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E258A2A-552E-43DB-9D00-949DB534AECB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A7BF830F-48AE-4844-8A05-8AA7587B5BB6}
 	EndGlobalSection
 EndGlobal
