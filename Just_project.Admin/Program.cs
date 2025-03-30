@@ -9,19 +9,19 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//#region Auth
-//builder.Services.AddDbContext<AppIdentityDbContext>
-//    (options => options.UseSqlServer(
-//        builder.Configuration["ConnectionStrings:DefaultConnection"]));
+#region Auth
+builder.Services.AddDbContext<AppIdentityDbContext>
+    (options => options.UseSqlServer(
+        builder.Configuration["ConnectionStrings:DefaultConnection"]));
 
-//builder.Services.AddIdentity<AppUser, IdentityRole>()
-//    .AddEntityFrameworkStores<AppIdentityDbContext>()     
-//    .AddDefaultTokenProviders();
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppIdentityDbContext>()
+    .AddDefaultTokenProviders();
 
 
-//builder.Services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/Login");
+builder.Services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/Login");
 
-//#endregion
+#endregion
 
 var app = builder.Build();
 
