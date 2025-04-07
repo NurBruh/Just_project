@@ -99,4 +99,67 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "blog",
+    pattern: "blog",
+    defaults: new { controller = "Blog", action = "Index" });
+
+app.MapControllerRoute(
+    name: "contact",
+    pattern: "contact",
+    defaults: new { controller = "Contact", action = "Index" });
+
+app.MapControllerRoute(
+    name: "faqs",
+    pattern: "faqs",
+    defaults: new { controller = "Faqs", action = "Index" });
+
+app.MapControllerRoute(
+    name: "shop",
+    pattern: "shop",
+    defaults: new { controller = "Shop", action = "Index" });
+
+app.MapControllerRoute(
+    name: "about-us",
+    pattern: "about-us",
+    defaults: new { controller = "Home", action = "About" });
+
+app.MapControllerRoute(
+    name: "shop",
+    pattern: "shop",
+    defaults: new { controller = "Home", action = "About" });
+
+app.MapControllerRoute(
+    name: "components",
+    pattern: "components",
+    defaults: new { controller = "Category", action = "Components" });
+
+app.MapControllerRoute(
+    name: "readypc",
+    pattern: "readypc",
+    defaults: new { controller = "Category", action = "Ready" });
+
+app.MapControllerRoute(
+    name: "office",
+    pattern: "office",
+    defaults: new { controller = "Category", action = "Office" });
+
+app.MapControllerRoute(
+    name: "gamingpc",
+    pattern: "gamingpc",
+    defaults: new { controller = "Category", action = "Gaming" });
+
+app.MapControllerRoute(
+    name: "service",
+    pattern: "service",
+    defaults: new { controller = "Category", action = "Service" });
+
+app.MapControllerRoute(
+    name: "custompc",
+    pattern: "custompc",
+    defaults: new { controller = "Category", action = "Custom" });
+
+
+
+
 app.Run();

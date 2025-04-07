@@ -9,66 +9,66 @@ namespace Just_project.Controllers
             return View();
         }
 
-        public IActionResult Carpenter()
+        public IActionResult Components()
         {
             return View();
         }
 
-        public IActionResult Flathead()
+        public IActionResult Ready()
         {
             return View();
         }
 
-        public IActionResult Hand()
+        public IActionResult Custom()
         {
             return View();
         }
-        public IActionResult Painting()
+        public IActionResult Service()
         {
             return View();
         }
-        public IActionResult Plumbing()
+        public IActionResult Gaming()
         {
             return View();
         }
-        public IActionResult Power()
+        public IActionResult Office()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult RedirectToCarpenter()
+        public IActionResult RedirectToComponents()
         {
-            return RedirectToRoute("default", new { controller = "Category", action = "Carpenter" });
+            return RedirectToRoute("default", new { controller = "Category", action = "Components" });
         }
 
         [HttpPost]
-        public IActionResult RedirectToPainting()
+        public IActionResult RedirectToCustom()
         {
-            return RedirectToRoute("default", new { controller = "Category", action = "Painting" });
+            return RedirectToRoute("default", new { controller = "Category", action = "Custom" });
         }
 
         [HttpPost]
-        public IActionResult RedirectToPower()
+        public IActionResult RedirectToGaming()
         {
-            return RedirectToRoute("default", new { controller = "Category", action = "Power" });
+            return RedirectToRoute("default", new { controller = "Category", action = "Gaming" });
         }
 
         [HttpPost]
-        public IActionResult RedirectToHand()
+        public IActionResult RedirectToOffice()
         {
-            return RedirectToRoute("default", new { controller = "Category", action = "Hand" });
+            return RedirectToRoute("default", new { controller = "Category", action = "Office" });
         }
 
         [HttpPost]
-        public IActionResult RedirectToPlumbing()
+        public IActionResult RedirectToReady()
         {
-            return RedirectToRoute("default", new { controller = "Category", action = "Plumbing" });
+            return RedirectToRoute("default", new { controller = "Category", action = "Ready" });
         }
 
         [HttpPost]
-        public IActionResult RedirectToFlathead()
+        public IActionResult RedirectToService()
         {
-            return RedirectToRoute("default", new { controller = "Category", action = "Flathead" });
+            return RedirectToRoute("default", new { controller = "Category", action = "Service" });
         }
     }
 
