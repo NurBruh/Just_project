@@ -4,18 +4,27 @@ using Microsoft.Extensions.DependencyInjection; // Add this using directive
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+#region MYSQLCONNECTION
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 35))));
+#endregion
+
 #region Auth
-builder.Services.AddDbContext<AppIdentityDbContext>
-    (options => options.UseSqlServer(
-        builder.Configuration["ConnectionStrings:DefaultConnection"]));
+//builder.Services.AddDbContext<AppIdentityDbContext>
+//    (options => options.UseSqlServer(
+//        builder.Configuration["ConnectionStrings:DefaultConnection"]));
+
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppIdentityDbContext>()
+    .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
 
@@ -24,6 +33,8 @@ builder.Services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/L
 #endregion
 
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

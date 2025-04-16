@@ -1,0 +1,97 @@
+﻿@model RegisterViewModel
+@{
+    Layout = "_LogInLayout"; // Use the same layout or a different one
+    ViewData["Title"] = "Register";
+}
+
+<div class="content">
+    <!-- BEGIN REGISTRATION FORM -->
+    @* Update action to post to Register action, pass returnUrl *@
+    <form class="register-form" asp-action="Register" asp-controller="Account" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" style="display: block;">
+        @* Ensure form is visible *@
+        <h3>Sign Up</h3>
+
+        @* Display general validation errors *@
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+        <p class="hint">Enter your personal details below:</p>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9" asp-for="FullName"></label>
+            <input class="form-control placeholder-no-fix" type="text" placeholder="Full Name" asp-for="FullName" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9" asp-for="Email"></label>
+            <input class="form-control placeholder-no-fix" type="text" placeholder="Email" asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9" asp-for="Address"></label>
+            <input class="form-control placeholder-no-fix" type="text" placeholder="Address" asp-for="Address" />
+            <span asp-validation-for="Address" class="text-danger"></span> @* Optional validation *@
+        </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9" asp-for="City"></label>
+            <input class="form-control placeholder-no-fix" type="text" placeholder="City/Town" asp-for="City" />
+            <span asp-validation-for="City" class="text-danger"></span> @* Optional validation *@
+        </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9" asp-for="Country"></label>
+            @* Keep your select list, but bind it with asp-for and maybe asp-items if loaded dynamically *@
+            <select asp-for="Country" class="form-control">
+                <option value="">Country</option>
+                <option value="AF">Afghanistan</option>
+                <option value="AL">Albania</option>
+                @* ... (keep all countries) ... *@
+                <option value="ZW">Zimbabwe</option>
+            </select>
+            <span asp-validation-for="Country" class="text-danger"></span> @* Optional validation *@
+        </div>
+
+        <p class="hint">Enter your account details below:</p>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9" asp-for="Username"></label>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" asp-for="Username" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9" asp-for="Password"></label>
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" asp-for="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9" asp-for="ConfirmPassword"></label>
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" asp-for="ConfirmPassword" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="form-group margin-top-20 margin-bottom-20">
+            <label class="check">
+                @* Bind checkbox to AgreeToTerms property *@
+                <input type="checkbox" asp-for="AgreeToTerms" /> @Html.DisplayNameFor(m => m.AgreeToTerms)
+                @* Link text remains the same, JS functionality not needed here *@
+                <a href="javascript:;">Terms of Service</a> & <a href="javascript:;">Privacy Policy</a>
+            </label>
+            @* Display validation error specifically for the checkbox *@
+            <div id="register_tnc_error">
+                <span asp-validation-for="AgreeToTerms" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Add AntiForgeryToken for security *@
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions">
+            @* Link back to Login action *@
+            <a asp-action="Login" asp-controller="Account" id="register-back-btn" class="btn btn-default">Back</a>
+            <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">Submit</button>
+        </div>
+    </form>
+    <!-- END REGISTRATION FORM -->
+</div>
+
+@* Add section for scripts if your layout requires it *@
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
