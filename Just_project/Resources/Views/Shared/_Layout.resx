@@ -120,6 +120,12 @@
   <data name="About Us" xml:space="preserve">
     <value>about us</value>
   </data>
+  <data name="About Us1" xml:space="preserve">
+    <value>about us</value>
+  </data>
+  <data name="About Us2" xml:space="preserve">
+    <value>about us</value>
+  </data>
   <data name="Address" xml:space="preserve">
     <value>address'</value>
   </data>
