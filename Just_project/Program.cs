@@ -125,11 +125,6 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "About" });
 
 app.MapControllerRoute(
-    name: "shop",
-    pattern: "shop",
-    defaults: new { controller = "Home", action = "About" });
-
-app.MapControllerRoute(
     name: "components",
     pattern: "components",
     defaults: new { controller = "Category", action = "Components" });
@@ -140,8 +135,8 @@ app.MapControllerRoute(
     defaults: new { controller = "Category", action = "Ready" });
 
 app.MapControllerRoute(
-    name: "office",
-    pattern: "office",
+    name: "officepc",
+    pattern: "officepc",
     defaults: new { controller = "Category", action = "Office" });
 
 app.MapControllerRoute(
