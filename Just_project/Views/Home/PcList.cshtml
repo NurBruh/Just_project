@@ -1,0 +1,23 @@
+﻿@model dynamic
+
+<h2>Список ПК (локализованный)</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pc in Model)
+        {
+            <tr>
+                <td>@pc.Title</td>
+                <td>@pc.Description</td>
+                <td>@pc.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -13,10 +13,17 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<LocalizeDbContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 35))));
 
-builder.Services.AddDbContext<AppIdentityDbContext>(
-    options => options.UseSqlServer(connection));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 35))));
+
+builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection1")));
+
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<AppIdentityDbContext>()
@@ -29,7 +36,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     
 });
 
-builder.Services.AddControllersWithViews();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews()
