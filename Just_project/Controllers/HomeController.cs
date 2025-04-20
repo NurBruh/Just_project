@@ -61,14 +61,14 @@ namespace Just_project.Controllers
         [HttpPost]
         public IActionResult AddPc(CreatePcViewModel model)
         {
-            var pc = new Pc
+            var pc = new PcModel
             {
                 Price = model.Price,
-                Translations = new List<PcTranslation>
+                Translations = new List<PcTranslationModel>
         {
-            new PcTranslation { Language = "en-US", Title = model.Title_en, Description = model.Description_en },
-            new PcTranslation { Language = "ru-RU", Title = model.Title_ru, Description = model.Description_ru },
-            new PcTranslation { Language = "kk-KZ", Title = model.Title_kk, Description = model.Description_kk },
+            new PcTranslationModel { Language = "en-US", Title = model.Title_en, Description = model.Description_en },
+            new PcTranslationModel { Language = "ru-RU", Title = model.Title_ru, Description = model.Description_ru },
+            new PcTranslationModel { Language = "kk-KZ", Title = model.Title_kk, Description = model.Description_kk },
         }
             };
 
@@ -101,16 +101,23 @@ namespace Just_project.Controllers
 
             var pcs = _db.Pcs
                 .Include(p => p.Translations)
-                .Select(p => new
-                {
-                    Id = p.Id,
-                    Price = p.Price,
-                    Title = p.Translations.FirstOrDefault(t => t.Language == culture)!.Title,
-                    Description = p.Translations.FirstOrDefault(t => t.Language == culture)!.Description
-                })
                 .ToList();
 
-            return View(pcs);
+            var PcViewModels = pcs.Select(p =>
+            {
+                var translation = p.Translations.FirstOrDefault(t => t.Language == culture);
+
+                return new PcViewModel
+                {
+                    Id = p.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    Price = p.Price
+
+                };
+            }).ToList();
+
+            return View(PcViewModels);
         }
 
         [HttpPost]

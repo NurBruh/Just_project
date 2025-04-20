@@ -1,7 +1,6 @@
-﻿@model dynamic
+﻿@model List<PcViewModel>
 
-<h2>Список ПК (локализованный)</h2>
-
+<h2>Список ПК</h2>
 <table class="table">
     <thead>
         <tr>
@@ -16,7 +15,7 @@
             <tr>
                 <td>@pc.Title</td>
                 <td>@pc.Description</td>
-                <td>@pc.Price</td>
+                <td>@pc.ShowPrice</td>
             </tr>
         }
     </tbody>

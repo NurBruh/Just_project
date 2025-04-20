@@ -4,6 +4,7 @@ using Just_project.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Just_project.Migrations.AppDb
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250420180121_aughh")]
+    partial class aughh
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace Just_project.Migrations.AppDb
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("Just_project.Models.PcModel", b =>
+            modelBuilder.Entity("Just_project.Models.Pc", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,7 +48,7 @@ namespace Just_project.Migrations.AppDb
                     b.ToTable("Pcs");
                 });
 
-            modelBuilder.Entity("Just_project.Models.PcTranslationModel", b =>
+            modelBuilder.Entity("Just_project.Models.PcTranslation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -75,9 +78,9 @@ namespace Just_project.Migrations.AppDb
                     b.ToTable("PcTranslations");
                 });
 
-            modelBuilder.Entity("Just_project.Models.PcTranslationModel", b =>
+            modelBuilder.Entity("Just_project.Models.PcTranslation", b =>
                 {
-                    b.HasOne("Just_project.Models.PcModel", "Pc")
+                    b.HasOne("Just_project.Models.Pc", "Pc")
                         .WithMany("Translations")
                         .HasForeignKey("PcId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -86,7 +89,7 @@ namespace Just_project.Migrations.AppDb
                     b.Navigation("Pc");
                 });
 
-            modelBuilder.Entity("Just_project.Models.PcModel", b =>
+            modelBuilder.Entity("Just_project.Models.Pc", b =>
                 {
                     b.Navigation("Translations");
                 });

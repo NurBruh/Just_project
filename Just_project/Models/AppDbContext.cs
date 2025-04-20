@@ -6,16 +6,16 @@ namespace Just_project.Models
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options) { }
-        public DbSet<Pc> Pcs { get; set; }
-        public DbSet<PcTranslation> PcTranslations { get; set; }
+        public DbSet<PcModel> Pcs { get; set; }
+        public DbSet<PcTranslationModel> PcTranslations { get; set; }
         //public DbSet<CreatePcViewModel> CreatePcViewModels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<PcTranslation>()
-                .HasOne(pt => pt.Pc)
+            modelBuilder.Entity<PcTranslationModel>()
+                .HasOne(pt => pt.PcModel)
                 .WithMany(p => p.Translations)
                 .HasForeignKey(pt => pt.PcId);
         }

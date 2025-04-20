@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Just_project", "Just_projec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Just_project.Admin", "Just_project.Admin\Just_project.Admin.csproj", "{8E258A2A-552E-43DB-9D00-949DB534AECB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Just_project.API", "Just_project.API\Just_project.API.csproj", "{DBE99F51-05BB-4B63-9111-4689C67D2CC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8E258A2A-552E-43DB-9D00-949DB534AECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E258A2A-552E-43DB-9D00-949DB534AECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E258A2A-552E-43DB-9D00-949DB534AECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBE99F51-05BB-4B63-9111-4689C67D2CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE99F51-05BB-4B63-9111-4689C67D2CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE99F51-05BB-4B63-9111-4689C67D2CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE99F51-05BB-4B63-9111-4689C67D2CC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

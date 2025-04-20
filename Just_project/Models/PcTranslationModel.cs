@@ -3,7 +3,7 @@
 namespace Just_project.Models
 
 {
-    public class PcTranslation
+    public class PcTranslationModel
     {
         public int Id { get; set; }
 
@@ -14,6 +14,6 @@ namespace Just_project.Models
         public string Title { get; set; }
         public string Description { get; set; }
 
-        public Pc Pc { get; set; }
+        public PcModel PcModel { get; set; }
     }
 }
