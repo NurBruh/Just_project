@@ -5,6 +5,7 @@
 
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
+@model List<BlogViewModel>
 
 @{
 	ViewData["Title"] = "Blog";
@@ -22,84 +23,22 @@
 	<div class="w-layout-blockcontainer container w-container">
 		<div class="w-dyn-list">
 			<div role="list" class="grid-blog w-dyn-items">
-				<div role="listitem" class="w-dyn-item">
-					<a href="/blog/the-latest-innovations-in-craftsmanship" class="blog-item w-inline-block">
-						<div class="blog-image-wrap">
-							<img alt="image"
-								 loading="lazy"
-								 src="~/images/rtx5000.png"
-								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								 class="blog-image" />
-							<div class="blog-date">12 @Localizer["Date"], 2025</div>
-						</div>
-						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog1"]</h2></div>
-					</a>
-				</div>
-				<div role="listitem" class="w-dyn-item">
-					<a href="/blog/navigating-common-artisan-challenges" class="blog-item w-inline-block">
-						<div class="blog-image-wrap">
-							<img alt="image"
-								 loading="lazy"
-								 src="~/images/467817_O.jpeg"
-								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								 class="blog-image" />
-							<div class="blog-date">12 @Localizer["Date"], 2025</div>
-						</div>
-						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog2"]</h2></div>
-					</a>
-				</div>
-				<div role="listitem" class="w-dyn-item">
-					<a href="/blog/shipping-strategies-for-e-commerce-success" class="blog-item w-inline-block">
-						<div class="blog-image-wrap">
-							<img alt="image"
-								 loading="lazy"
-								 src="~/images/pcl.jpeg"
-								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								 class="blog-image" />
-							<div class="blog-date">12 @Localizer["Date"], 2025</div>
-						</div>
-						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog3"]</h2></div>
-					</a>
-				</div>
-				<div role="listitem" class="w-dyn-item">
-					<a href="/blog/creating-irresistible-product-descriptions" class="blog-item w-inline-block">
-						<div class="blog-image-wrap">
-							<img alt="image"
-								 loading="lazy"
-								 src="~/images/pcsbor.png"
-								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								 class="blog-image" />
-							<div class="blog-date">12 @Localizer["Date"], 2025</div>
-						</div>
-						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog4"]</h2></div>
-					</a>
-				</div>
-				<div role="listitem" class="w-dyn-item">
-					<a href="/blog/the-art-of-upselling-and-cross-selling" class="blog-item w-inline-block">
-						<div class="blog-image-wrap">
-							<img alt="image"
-								 loading="lazy"
-								 src="~/images/9000.png"
-								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								 class="blog-image" />
-							<div class="blog-date">12 @Localizer["Date"], 2025</div>
-						</div>
-						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog5"]</h2></div>
-					</a>
-				</div>
-				<div role="listitem" class="w-dyn-item">
-					<a href="/blog/unleashing-the-power-of-social-commerce" class="blog-item w-inline-block">
-						<div class="blog-image-wrap">
-							<img alt="image"
-								 loading="lazy"
-								 src="~/images/vabor.jpeg"
-								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								 class="blog-image" />
-							<div class="blog-date">12 @Localizer["Date"], 2025</div>
-						</div>
-						<div class="blog-info"><h2 class="blog-title">@Localizer["Blog6"]</h2></div>
-					</a>
-				</div>
+				@foreach (var blog in Model)
+				{
+					<div class="w-dyn-item">
+						<a href="/blog/the-latest-innovations-in-craftsmanship" class="blog-item w-inline-block">
+							<div class="blog-image-wrap">
+								<img alt="image"
+									 loading="lazy"
+									 src="~/images/rtx5000.png"
+									 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
+									 class="blog-image" />
+								<div class="blog-date">@blog.Date</div>
+							</div>
+							<div class="blog-info"><h3 class="blog-title">@blog.Title</h3></div>
+						</a>
+					</div>
+				}
 			</div>
 		</div>
 	</div>

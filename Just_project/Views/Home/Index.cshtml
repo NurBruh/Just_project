@@ -1,8 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
+@model HomePageModels
+
+
 
 @{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 
 <!-- HERO SECTION -->
@@ -105,7 +108,7 @@
 						</div>
 					</a>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -343,10 +346,10 @@
 					<div class="new-product-item">
 						<div class="new-product-image-wrap">
 							<img alt="image"
-								 loading="lazy"
-								 src="~/images/MINIITX.jpg"
-								 sizes="(max-width: 479px) 94vw, (max-width: 991px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								 class="new-product-image" />
+							loading="lazy"
+							src="~/images/MINIITX.jpg"
+							sizes="(max-width: 479px) 94vw, (max-width: 991px) 96vw, (max-width: 1279px) 46vw, 45vw"
+							class="new-product-image" />
 						</div>
 						<div class="new-product-info">
 							<div class="product-single-title-wrap">
@@ -366,14 +369,14 @@
 								<form class="w-commerce-commerceaddtocartform no-margin">
 									<label for="quantity">Количество</label>
 									<input type="number"
-										   id="quantity"
-										   name="quantity"
-										   min="1"
-										   class="w-commerce-commerceaddtocartquantityinput product-simple-quantity"
-										   value="1" />
+									id="quantity"
+									name="quantity"
+									min="1"
+									class="w-commerce-commerceaddtocartquantityinput product-simple-quantity"
+									value="1" />
 									<input type="submit"
-										   class="w-commerce-commerceaddtocartbutton button-outline add-button"
-										   value="Привяжите карту" />
+									class="w-commerce-commerceaddtocartbutton button-outline add-button"
+									value="Привяжите карту" />
 								</form>
 								<div style="display:none" class="w-commerce-commerceaddtocartoutofstock empty-state">
 									<div>Удобен в транспортировке.</div>
@@ -417,71 +420,23 @@
 		</div>
 		<div class="w-dyn-list">
 			<div class="grid-blog w-dyn-items">
-				<div class="w-dyn-item">
-					<a href="/blog/the-latest-innovations-in-craftsmanship" class="blog-item w-inline-block">
-						<div class="blog-image-wrap">
-							<img alt="image"
-								 loading="lazy"
-								 src="~/images/rtx5000.png"
-								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								 class="blog-image" />
-							<div class="blog-date">Март 12, 2025</div>
-						</div>
-						<div class="blog-info"><h3 class="blog-title">NVIDIA представила новую линейку видеокарт серий RTX 5000</h3></div>
-					</a>
-				</div>
-				<div class="w-dyn-item">
-					<a href="/blog/navigating-common-artisan-challenges" class="blog-item w-inline-block">
-						<div class="blog-image-wrap">
-							<img alt="image"
-								 loading="lazy"
-								 src="~/images/467817_O.jpeg"
-								 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								 class="blog-image" />
-							<div class="blog-date">Март 12, 2025</div>
-						</div>
-						<div class="blog-info"><h3 class="blog-title"> Intel выпустила 15-е поколение процессоров Core </h3></div>
-					</a>
-				</div>
+				@foreach (var blog in Model.Blogs){
+					<div class="w-dyn-item">
+						<a href="/blog/the-latest-innovations-in-craftsmanship" class="blog-item w-inline-block">
+							<div class="blog-image-wrap">
+								<img alt="image"
+								loading="lazy"
+								src="~/images/rtx5000.png"
+								sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
+								class="blog-image" />
+								<div class="blog-date">@blog.Date</div>
+							</div>
+							<div class="blog-info"><h3 class="blog-title">@blog.Title</h3></div>
+						</a>
+					</div>
+				}
 
 			</div>
 		</div>
 	</div>
 </section>
-<!-- END OF BLOG SECTION -->
-@* <!-- START OF FEATURE SIMPLE SECTION -->
-<section class="feature-simple-section">
-	<div class="w-layout-blockcontainer container w-container">
-		<div class="w-layout-grid grid-feature-simple">
-			<div id="w-node-_1e8eec1a-9669-8570-2dd7-52169201b861-abeac9fa" class="feature-simple-item-wrap">
-				<img src="images/feature-icon-01.svg" loading="lazy" alt="image" class="feature-simple-icon" />
-				<div class="feature-info">
-					<h3 class="feature-title">@Localizer["shipping"]</h3>
-					<p class="no-margin">@Localizer["shipping_message"]</p>
-				</div>
-			</div>
-			<div id="w-node-_1e8eec1a-9669-8570-2dd7-52169201b867-abeac9fa" class="feature-simple-item-wrap">
-				<img src="images/feature-icon-02.svg" loading="lazy" alt="image" class="feature-icon" />
-				<div class="feature-info">
-					<h3 class="feature-title">@Localizer["Refund"]</h3>
-					<p class="no-margin">@Localizer["refund_mess"]</p>
-				</div>
-			</div>
-			<div id="w-node-_1e8eec1a-9669-8570-2dd7-52169201b86d-abeac9fa" class="feature-simple-item-wrap">
-				<img src="images/feature-icon-03.svg" loading="lazy" alt="image" class="feature-icon" />
-				<div class="feature-info">
-					<h3 class="feature-title">@Localizer["Support_"]</h3>
-					<p class="no-margin">@Localizer["support_mess"]</p>
-				</div>
-			</div>
-			<div id="w-node-_1e8eec1a-9669-8570-2dd7-52169201b873-abeac9fa" class="feature-simple-item-wrap">
-				<img src="images/feature-icon-04.svg" loading="lazy" alt="image" class="feature-icon" />
-				<div class="feature-info">
-					<h3 class="feature-title">@Localizer["Payment"]</h3>
-					<p class="no-margin">@Localizer["Pay_message"]</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- END OF FEATURE SIMPLE SECTION --> *@

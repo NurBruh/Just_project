@@ -4,16 +4,19 @@ using Just_project.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Just_project.Migrations.AppDb
+namespace Just_project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250422160903_Firstinit")]
+    partial class Firstinit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,56 @@ namespace Just_project.Migrations.AppDb
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+
+            modelBuilder.Entity("Just_project.Models.BlogModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("CreateBy")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("Just_project.Models.BlogTranslationModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Language")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("BlogTranslations");
+                });
 
             modelBuilder.Entity("Just_project.Models.PcModel", b =>
                 {
@@ -75,20 +128,36 @@ namespace Just_project.Migrations.AppDb
                     b.ToTable("PcTranslations");
                 });
 
+            modelBuilder.Entity("Just_project.Models.BlogTranslationModel", b =>
+                {
+                    b.HasOne("Just_project.Models.BlogModel", "BlogModel")
+                        .WithMany("BlogTranslations")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BlogModel");
+                });
+
             modelBuilder.Entity("Just_project.Models.PcTranslationModel", b =>
                 {
-                    b.HasOne("Just_project.Models.PcModel", "Pc")
-                        .WithMany("Translations")
+                    b.HasOne("Just_project.Models.PcModel", "PcModel")
+                        .WithMany("PcTranslations")
                         .HasForeignKey("PcId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Pc");
+                    b.Navigation("PcModel");
+                });
+
+            modelBuilder.Entity("Just_project.Models.BlogModel", b =>
+                {
+                    b.Navigation("BlogTranslations");
                 });
 
             modelBuilder.Entity("Just_project.Models.PcModel", b =>
                 {
-                    b.Navigation("Translations");
+                    b.Navigation("PcTranslations");
                 });
 #pragma warning restore 612, 618
         }

@@ -9,5 +9,6 @@ namespace Just_project.Admin.Models
         {
 
         }
+        
     }
 }

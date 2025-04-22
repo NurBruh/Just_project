@@ -1,0 +1,39 @@
+﻿@model Just_project.Admin.Models.CreateBlogViewModel
+
+<h2>Добавить ПК с переводами</h2>
+
+<form asp-action="AddBlog" method="post">
+ 
+
+    <h4>English</h4>
+    <div>
+        <label>Title</label>
+        <input asp-for="Title_en" class="form-control" />
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea asp-for="Description_en" class="form-control"></textarea>
+    </div>
+
+    <h4>Russian</h4>
+    <div>
+        <label>Title</label>
+        <input asp-for="Title_ru" class="form-control" />
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea asp-for="Description_ru" class="form-control"></textarea>
+    </div>
+
+    <h4>Kazakh</h4>
+    <div>
+        <label>Title</label>
+        <input asp-for="Title_kk" class="form-control" />
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea asp-for="Description_kk" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+</form>

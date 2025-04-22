@@ -15,6 +15,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
     new MySqlServerVersion(new Version(8, 0, 35))));
+
+builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 35))));
 #endregion
 
 #region Auth
@@ -24,13 +28,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
+    .AddEntityFrameworkStores<AppIdentityDbContext>()
     .AddDefaultTokenProviders();
 
 
 builder.Services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/Login");
 
 #endregion
+
 
 var app = builder.Build();
 
