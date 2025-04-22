@@ -15,6 +15,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
     new MySqlServerVersion(new Version(8, 0, 35))));
+
+builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 35))));
 #endregion
 
 #region Auth
@@ -24,7 +28,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
+    .AddEntityFrameworkStores<AppIdentityDbContext>()
     .AddDefaultTokenProviders();
 
 
@@ -32,7 +36,40 @@ builder.Services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/L
 
 #endregion
 
+
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var userManager = services.GetRequiredService<UserManager<AppUser>>();
+
+    string username = "seasonic";
+    string email = "amdfx9590@bk.ru";
+    string password = "KaliL!nux2OOO";
+
+    var user = await userManager.FindByNameAsync(username);
+    if (user == null)
+    {
+        var newUser = new AppUser
+        {
+            UserName = username,
+            Email = email,
+            EmailConfirmed = true
+        };
+        var result = await userManager.CreateAsync(newUser, password);
+
+        if (result.Succeeded)
+        {
+            Console.WriteLine(" Пользователь создан: admin / Admin123!");
+        }
+        else
+        {
+            Console.WriteLine(" Ошибки при создании:");
+            foreach (var error in result.Errors)
+                Console.WriteLine($" - {error.Description}");
+        }
+    }
+}
 
 
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Just_project.Models
+namespace Just_project.Admin.Models
 {
     public class PcModel
     {

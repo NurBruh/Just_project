@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Just_project.Admin.Migrations
 {
     /// <inheritdoc />
-    public partial class firstInit : Migration
+    public partial class lll : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

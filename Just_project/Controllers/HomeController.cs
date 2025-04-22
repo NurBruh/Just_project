@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Globalization;
+using System.Threading.Tasks;
 using Just_project.Models;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,21 +19,59 @@ namespace Just_project.Controllers
             _logger = logger;
             _context = context;
             _db = db;
-        }   
-
-        public IActionResult Index()
+        }
+        
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }  
+            var culture = CultureInfo.CurrentUICulture.Name;
+
+            var blogs = _db.Blogs
+                .Include(b => b.BlogTranslations).ToList();
+
+            var BlogViewModels = blogs.Select(b =>
+            {
+                var translation = b.BlogTranslations.FirstOrDefault(
+                t => t.Language == culture);
+                return new BlogViewModel
+                {
+                    Id = b.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+
+                };
+            }).ToList();
+
+            var components = _db.Components
+                .Include(c => c.ComponentsTranslations).ToList();
+
+            var ComponentsViewModels = components.Select(c =>
+            {
+                var translation = c.ComponentsTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+                return new ComponentsViewModel
+                {
+                    Id = c.Id,
+                    Title = translation?.Title ?? "",
+                    
+                };
+            }).ToList();
+
+            var model = new HomePageModels
+            {
+                Components = ComponentsViewModels,
+                Blogs = BlogViewModels
+            };
+            return View(model);
+        }
         public IActionResult Tester(int id)
         {
             var currentCulture = CultureInfo.CurrentUICulture.Name;
 
             var pc = _db.Pcs
-                .Include(p => p.Translations)
+                .Include(p => p.PcTranslations)
                 .FirstOrDefault(p => p.Id == id);
 
-            var localized = pc.Translations.FirstOrDefault(t => t.Language == currentCulture);
+            var localized = pc.PcTranslations.FirstOrDefault(t => t.Language == currentCulture);
 
             var title = localized?.Title ?? "Default title";
             var description = localized?.Description ?? "Default description";
@@ -56,7 +95,27 @@ namespace Just_project.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult AddBlog()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddBlog(CreateBlogViewModel model)
+        {
+            var blog = new BlogModel
+            {
+                BlogTranslations = new List<BlogTranslationModel> {
+                    new BlogTranslationModel { Language = "en-US", Title = model.Title_en, Description = model.Description_en },
+                    new BlogTranslationModel { Language = "ru-RU", Title = model.Title_ru, Description = model.Description_ru },
+                    new BlogTranslationModel { Language = "kk-KZ", Title = model.Title_kk, Description = model.Description_kk },
+                }
+            };
 
+            _db.Blogs.Add(blog);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         public IActionResult AddPc(CreatePcViewModel model)
@@ -64,12 +123,12 @@ namespace Just_project.Controllers
             var pc = new PcModel
             {
                 Price = model.Price,
-                Translations = new List<PcTranslationModel>
-        {
-            new PcTranslationModel { Language = "en-US", Title = model.Title_en, Description = model.Description_en },
-            new PcTranslationModel { Language = "ru-RU", Title = model.Title_ru, Description = model.Description_ru },
-            new PcTranslationModel { Language = "kk-KZ", Title = model.Title_kk, Description = model.Description_kk },
-        }
+                PcTranslations = new List<PcTranslationModel>
+                {
+                    new PcTranslationModel { Language = "en-US", Title = model.Title_en, Description = model.Description_en },
+                    new PcTranslationModel { Language = "ru-RU", Title = model.Title_ru, Description = model.Description_ru },
+                    new PcTranslationModel { Language = "kk-KZ", Title = model.Title_kk, Description = model.Description_kk },
+                }
             };
 
             _db.Pcs.Add(pc);
@@ -77,6 +136,32 @@ namespace Just_project.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult PcList()
+        {
+            var culture = CultureInfo.CurrentUICulture.Name;
+
+            var pcs = _db.Pcs
+                .Include(p => p.PcTranslations)
+                .ToList();
+
+            var PcViewModels = pcs.Select(p =>
+            {
+                var translation = p.PcTranslations.FirstOrDefault(t => t.Language == culture);
+
+                return new PcViewModel
+                {
+                    Id = p.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    Price = p.Price
+
+                };
+            }).ToList();
+
+            return View(PcViewModels);
+        }
+
         public IActionResult LocalizedText()
         {
             var culture = Thread.CurrentThread.CurrentUICulture.Name;
@@ -94,31 +179,8 @@ namespace Just_project.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        public IActionResult PcList()
-        {
-            var culture = CultureInfo.CurrentUICulture.Name;
-
-            var pcs = _db.Pcs
-                .Include(p => p.Translations)
-                .ToList();
-
-            var PcViewModels = pcs.Select(p =>
-            {
-                var translation = p.Translations.FirstOrDefault(t => t.Language == culture);
-
-                return new PcViewModel
-                {
-                    Id = p.Id,
-                    Title = translation?.Title ?? "",
-                    Description = translation?.Description ?? "",
-                    Price = p.Price
-
-                };
-            }).ToList();
-
-            return View(PcViewModels);
-        }
+        
+       
 
         [HttpPost]
         public JsonResult ChangeCulture(string culture)
