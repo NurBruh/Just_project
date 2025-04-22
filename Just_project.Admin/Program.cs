@@ -38,6 +38,38 @@ builder.Services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/L
 
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var userManager = services.GetRequiredService<UserManager<AppUser>>();
+
+    string username = "seasonic";
+    string email = "amdfx9590@bk.ru";
+    string password = "KaliL!nux2OOO";
+
+    var user = await userManager.FindByNameAsync(username);
+    if (user == null)
+    {
+        var newUser = new AppUser
+        {
+            UserName = username,
+            Email = email,
+            EmailConfirmed = true
+        };
+        var result = await userManager.CreateAsync(newUser, password);
+
+        if (result.Succeeded)
+        {
+            Console.WriteLine(" Пользователь создан: admin / Admin123!");
+        }
+        else
+        {
+            Console.WriteLine(" Ошибки при создании:");
+            foreach (var error in result.Errors)
+                Console.WriteLine($" - {error.Description}");
+        }
+    }
+}
 
 
 
