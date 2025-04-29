@@ -12,6 +12,8 @@ namespace Just_project.Models
         public DbSet<BlogTranslationModel> BlogTranslations { get; set; }
         public DbSet<ComponentsModel> Components { get; set; }
         public DbSet<ComponentsTranslationModel> ComponentsTranslations { get; set; }
+        public DbSet<ComplistModel> Complists { get; set; }
+        public DbSet<ComplistTranslationModel> ComplistTranslations { get; set; }
         //public DbSet<CreatePcViewModel> CreatePcViewModels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -31,6 +33,10 @@ namespace Just_project.Models
                 .HasOne(ct => ct.ComponentsModel)
                 .WithMany(c => c.ComponentsTranslations)
                 .HasForeignKey(ct => ct.ComponentsId);
+            modelBuilder.Entity<ComplistTranslationModel>()
+                .HasOne(ct => ct.ComplistModel)
+                .WithMany(c => c.ComplistTranslations)
+                .HasForeignKey(ct => ct.ComplistId);
         }
 
     }

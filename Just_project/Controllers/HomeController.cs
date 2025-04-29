@@ -26,7 +26,7 @@ namespace Just_project.Controllers
             var culture = CultureInfo.CurrentUICulture.Name;
 
             var blogs = _db.Blogs
-                .Include(b => b.BlogTranslations).ToList();
+                 .Include(b => b.BlogTranslations).ToList();
 
             var BlogViewModels = blogs.Select(b =>
             {
@@ -37,6 +37,8 @@ namespace Just_project.Controllers
                     Id = b.Id,
                     Title = translation?.Title ?? "",
                     Description = translation?.Description ?? "",
+                    ImagePath = b.ImagePath,
+                    CreateTime = b.CreateAt,
 
                 };
             }).ToList();
@@ -58,12 +60,59 @@ namespace Just_project.Controllers
                 };
             }).ToList();
 
+            var complists = _db.Complists
+                .Include(c => c.ComplistTranslations).ToList();
+            var ComplistViewModels = complists.Select(c =>
+            {
+                var traslation = c.ComplistTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+                return new ComplistViewModel
+                {
+                    Id = c.Id,
+                    Title = traslation?.Title ?? "",
+                    ImagePath = c.ImagePath,
+                };
+            }).ToList();
+
             var model = new HomePageModels
             {
                 Components = ComponentsViewModels,
-                Blogs = BlogViewModels
+                Blogs = BlogViewModels,
+                Complists = ComplistViewModels
             };
             return View(model);
+        }
+        [HttpGet]
+        public IActionResult AddComplist() 
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddComplist(CreateComplistViewModel model)
+        {
+            byte[] imageData = null;
+            if(model.ImagePath != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await model.ImagePath.CopyToAsync(memoryStream);
+                    imageData = memoryStream.ToArray();
+                }
+            }
+
+            var complist = new ComplistModel
+            {
+                ImagePath = imageData,
+                ComplistTranslations = new List<ComplistTranslationModel>
+                {
+                    new ComplistTranslationModel { Language = "en-US", Title = model.Title_en },
+                    new ComplistTranslationModel { Language = "ru-RU", Title = model.Title_ru},
+                    new ComplistTranslationModel { Language = "kk-KZ", Title = model.Title_kk },
+                }
+            };
+            _db.Complists.Add(complist);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
         public IActionResult Tester(int id)
         {

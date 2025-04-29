@@ -1,0 +1,35 @@
+﻿@model Just_project.Models.CreateComplistViewModel
+
+<h2>Добавить ПК с переводами</h2>
+
+<form asp-action="AddComplist" method="post" enctype="multipart/form-data">
+
+
+    <h4>English</h4>
+    <div>
+        <label>Title</label>
+        <input asp-for="Title_en" class="form-control" />
+    </div>
+    
+
+    <h4>Russian</h4>
+    <div>
+        <label>Title</label>
+        <input asp-for="Title_ru" class="form-control" />
+    </div>
+    
+
+    <h4>Kazakh</h4>
+    <div>
+        <label>Title</label>
+        <input asp-for="Title_kk" class="form-control" />
+    </div>
+    
+    <h4>Image</h4>
+    <div>
+        <label>Upload Image</label>
+        <input asp-for="ImagePath" type="file" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+</form>

@@ -187,23 +187,30 @@
 		<div class="category-slider-wrap">
 			<div class="category-slider w-slider">
 				<div class="category-mask w-slider-mask">
-					@* @foreach (var components in Model.Components)
+					 @foreach (var complists in Model.Complists)
 					{
+
+						string base64 = Convert.ToBase64String(complists.ImagePath);
+						string imageSrc = $"data:image/jpg;base64,{base64}";
 						<div class="category-slide w-slide">
 							<div class="w-dyn-list">
 								<div class="w-dyn-items">
 									<div class="w-dyn-item">
 										<a href="/category/carpenter-tool" class="category-simple-item w-inline-block">
 											<div class="category-simple-image-wrap">
-												<img loading="lazy" src="~/images/RTX5090.png" class="category-simple-image" />
+												<img alt="image"
+													 loading="lazy"
+													 src="@imageSrc"
+													 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
+													 class="blog-image" />
 											</div>
-											<h3 class="category-simple-title">@components.Title</h3>
+											<h3 class="category-simple-title">@complists.Title</h3>
 										</a>
 									</div>
 								</div>
 							</div>
 						</div>
-					} *@
+					} 
 		
 				</div>	
 				<div class="category-left-arrow w-slider-arrow-left"><img src="images/left-arrow.svg" loading="lazy" alt="image" class="slide-icon" /></div>
@@ -298,14 +305,16 @@
 		<div class="w-dyn-list">
 			<div class="grid-blog w-dyn-items">
 				@foreach (var blog in Model.Blogs){
+					string base64 = Convert.ToBase64String(blog.ImagePath);
+					string imageSrc = $"data:image/jpg;base64,{base64}";
 					<div class="w-dyn-item">
 						<a href="/blog/the-latest-innovations-in-craftsmanship" class="blog-item w-inline-block">
 							<div class="blog-image-wrap">
 								<img alt="image"
-								loading="lazy"
-								src="~/images/rtx5000.png"
-								sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
-								class="blog-image" />
+									 loading="lazy"
+									 src="@imageSrc"
+									 sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1279px) 46vw, 45vw"
+									 class="blog-image" />
 								<div class="blog-date">@blog.Date</div>
 							</div>
 							<div class="blog-info"><h3 class="blog-title">@blog.Title</h3></div>
