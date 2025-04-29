@@ -52,7 +52,9 @@ namespace Just_project.Controllers
                 {
                     Id = c.Id,
                     Title = translation?.Title ?? "",
-                    
+                    Description = translation?.Description ?? "",
+                    Price = c.Price
+
                 };
             }).ToList();
 
@@ -95,27 +97,7 @@ namespace Just_project.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public IActionResult AddBlog()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult AddBlog(CreateBlogViewModel model)
-        {
-            var blog = new BlogModel
-            {
-                BlogTranslations = new List<BlogTranslationModel> {
-                    new BlogTranslationModel { Language = "en-US", Title = model.Title_en, Description = model.Description_en },
-                    new BlogTranslationModel { Language = "ru-RU", Title = model.Title_ru, Description = model.Description_ru },
-                    new BlogTranslationModel { Language = "kk-KZ", Title = model.Title_kk, Description = model.Description_kk },
-                }
-            };
-
-            _db.Blogs.Add(blog);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        
 
         [HttpPost]
         public IActionResult AddPc(CreatePcViewModel model)
@@ -136,7 +118,30 @@ namespace Just_project.Controllers
 
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public IActionResult AddComponents()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddComponents(CreateComponentsViewModel model)
+        {
+            var component = new ComponentsModel
+            {
+                Price = model.Price,
+                ComponentsTranslations = new List<ComponentsTranslationModel>
+                {
+                    new ComponentsTranslationModel { Language = "en-US", Title = model.Title_en, Description = model.Description_en},
+                    new ComponentsTranslationModel { Language = "ru-RU", Title = model.Title_ru, Description = model.Description_ru},
+                    new ComponentsTranslationModel { Language = "kk-KZ", Title = model.Title_kk, Description = model.Description_kk},
+                }
+            };
 
+            _db.Components.Add(component);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
         public IActionResult PcList()
         {
             var culture = CultureInfo.CurrentUICulture.Name;

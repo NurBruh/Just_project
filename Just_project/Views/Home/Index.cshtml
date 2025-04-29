@@ -143,6 +143,8 @@
 			<div class="product-slide-wrap">
 				<div class="product-slider w-slider">
 					<div class="product-mask w-slider-mask">
+						@foreach(var component in Model.Components)
+						{
 						<div class="product-slide w-slide">
 							<div class="w-dyn-list">
 								<div class="w-dyn-items">
@@ -152,10 +154,9 @@
 												<img src="~/images/RTX5090.png" alt="Ratchet spanner and faced hammer" class="product-image" />
 											</div>
 											<div class="product-info-wrap">
-												<h3 class="product-title">Видеокарта Nvidia RTX5090</h3>
+												<h3 class="product-title">@component.Title</h3>
 												<div class="product-price-wrap">
-													<div class="product-price">$1,890.00 USD</div>
-													<div class="compare-price">$2,000.00 USD</div>
+													<div class="product-price">@component.KZTPrice</div>
 												</div>
 											</div>
 										</a>
@@ -163,66 +164,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="product-slide w-slide">
-							<div class="w-dyn-list">
-								<div class="w-dyn-items">
-									<div class="w-dyn-item">
-										<a href="/product/yato-electrician-motor-cutter" class="product-item w-inline-block">
-											<div class="product-image-wrap">
-												<img src="~/images/Gigabyte.png" alt="YATO electrician motor cutter" class="product-image" />
-											</div>
-											<div class="product-info-wrap">
-												<h3 class="product-title">Материнская плата Gigabyte B650 X AX V2 </h3>
-												<div class="product-price-wrap">
-													<div class="product-price">$220.00 USD</div>
-													<div class="compare-price">$250.00 USD</div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="product-slide w-slide">
-							<div class="w-dyn-list">
-								<div class="w-dyn-items">
-									<div class="w-dyn-item">
-										<a href="/product/ingco-power-tools-and-hand-tools-cordless" class="product-item w-inline-block">
-											<div class="product-image-wrap">
-												<img src="~/images/kcas.png" alt="Ingco power tools and hand tools cordless" class="product-image" />
-											</div>
-											<div class="product-info-wrap">
-												<h3 class="product-title">Блок питания AeroCool KCAS 1,000W </h3>
-												<div class="product-price-wrap">
-													<div class="product-price">$175.00 USD</div>
-													<div class="compare-price">$200.00 USD</div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="product-slide w-slide">
-							<div class="w-dyn-list">
-								<div class="w-dyn-items">
-									<div class="w-dyn-item">
-										<a href="/product/corded-electric-rotary-machine" class="product-item w-inline-block">
-											<div class="product-image-wrap">
-												<img src="~/images/Fury.png" alt="Corded electric rotary machine" class="product-image" />
-											</div>
-											<div class="product-info-wrap">
-												<h3 class="product-title">SSD Kingston FURY Renegate 1tb</h3>
-												<div class="product-price-wrap">
-													<div class="product-price">$80.00 USD</div>
-													<div class="compare-price">$100.00 USD</div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
+						}
+
 					</div>
 					<div class="left-arrow w-slider-arrow-left">
 						<img src="images/chevron-right.svg" alt="Previous" class="product-icon" />
@@ -244,91 +187,25 @@
 		<div class="category-slider-wrap">
 			<div class="category-slider w-slider">
 				<div class="category-mask w-slider-mask">
-					<div class="category-slide w-slide">
-						<div class="w-dyn-list">
-							<div class="w-dyn-items">
-								<div class="w-dyn-item">
-									<a href="/category/carpenter-tool" class="category-simple-item w-inline-block">
-										<div class="category-simple-image-wrap">
-											<img loading="lazy" src="~/images/RTX5090.png" class="category-simple-image" />
-										</div>
-										<h3 class="category-simple-title">Видеокарта</h3>
-									</a>
+					@* @foreach (var components in Model.Components)
+					{
+						<div class="category-slide w-slide">
+							<div class="w-dyn-list">
+								<div class="w-dyn-items">
+									<div class="w-dyn-item">
+										<a href="/category/carpenter-tool" class="category-simple-item w-inline-block">
+											<div class="category-simple-image-wrap">
+												<img loading="lazy" src="~/images/RTX5090.png" class="category-simple-image" />
+											</div>
+											<h3 class="category-simple-title">@components.Title</h3>
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="category-slide w-slide">
-						<div class="w-dyn-list">
-							<div class="w-dyn-items">
-								<div class="w-dyn-item">
-									<a href="/category/painting-tool" class="category-simple-item w-inline-block">
-										<div class="category-simple-image-wrap">
-											<img loading="lazy" src="~/images/kcas.png" class="category-simple-image" />
-										</div>
-										<h3 class="category-simple-title">Блок питания</h3>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="category-slide w-slide">
-						<div class="w-dyn-list">
-							<div class="w-dyn-items">
-								<div class="w-dyn-item">
-									<a href="/category/power-tool" class="category-simple-item w-inline-block">
-										<div class="category-simple-image-wrap">
-											<img loading="lazy" src="~/images/Fury_RAM.png" class="category-simple-image" />
-										</div>
-										<h3 class="category-simple-title">Операвтивная память</h3>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="category-slide w-slide">
-						<div class="w-dyn-list">
-							<div class="w-dyn-items">
-								<div class="w-dyn-item">
-									<a href="/category/hand-tool" class="category-simple-item w-inline-block">
-										<div class="category-simple-image-wrap">
-											<img loading="lazy" src="~/images/Gigabyte.png" class="category-simple-image" />
-										</div>
-										<h3 class="category-simple-title">Материнская плата</h3>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="category-slide w-slide">
-						<div class="w-dyn-list">
-							<div class="w-dyn-items">
-								<div class="w-dyn-item">
-									<a href="/category/plumbing-tool" class="category-simple-item w-inline-block">
-										<div class="category-simple-image-wrap">
-											<img loading="lazy" src="~/images/Fury.png" class="category-simple-image" />
-										</div>
-										<h3 class="category-simple-title">SSD</h3>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="category-slide w-slide">
-						<div class="w-dyn-list">
-							<div class="w-dyn-items">
-								<div class="w-dyn-item">
-									<a href="/category/flathead-tool" class="category-simple-item w-inline-block">
-										<div class="category-simple-image-wrap">
-											<img loading="lazy" src="~/images/7800x3d.jpg" class="category-simple-image" />
-										</div>
-										<h3 class="category-simple-title">Процессор</h3>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+					} *@
+		
+				</div>	
 				<div class="category-left-arrow w-slider-arrow-left"><img src="images/left-arrow.svg" loading="lazy" alt="image" class="slide-icon" /></div>
 				<div class="category-right-arrow w-slider-arrow-right"><img src="images/right-arrow.svg" loading="lazy" alt="image" class="slide-icon" /></div>
 				<div class="slider-nav w-slider-nav w-round w-num"></div>

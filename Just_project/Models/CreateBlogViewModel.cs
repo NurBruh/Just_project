@@ -1,4 +1,6 @@
-﻿namespace Just_project.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Just_project.Models
 {
     public class CreateBlogViewModel
     {
@@ -10,5 +12,8 @@
 
         public string Title_kk { get; set; }
         public string Description_kk { get; set; }
+
+        [Required(ErrorMessage = "Заливайте изображения!")]
+        public IFormFile ImagePath { get; set; }
     }
 }

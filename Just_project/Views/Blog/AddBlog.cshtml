@@ -2,7 +2,7 @@
 
 <h2>Добавить ПК с переводами</h2>
 
-<form asp-action="AddBlog" method="post">
+<form asp-action="AddBlog" method="post" enctype="multipart/form-data">
  
 
     <h4>English</h4>
@@ -33,6 +33,11 @@
     <div>
         <label>Description</label>
         <textarea asp-for="Description_kk" class="form-control"></textarea>
+    </div>
+    <h4>Image</h4>
+    <div>
+        <label>Upload Image</label>
+        <input asp-for="ImagePath" type="file" class="form-control" />
     </div>
 
     <button type="submit" class="btn btn-primary mt-3">Сохранить</button>

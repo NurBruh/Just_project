@@ -4,6 +4,7 @@ using Just_project.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Just_project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250428183202_components")]
+    partial class components
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,10 +39,6 @@ namespace Just_project.Migrations
                     b.Property<string>("CreateBy")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<byte[]>("ImagePath")
-                        .IsRequired()
-                        .HasColumnType("longblob");
 
                     b.HasKey("Id");
 
@@ -91,9 +90,6 @@ namespace Just_project.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("float");
-
                     b.HasKey("Id");
 
                     b.ToTable("Components");
@@ -109,10 +105,6 @@ namespace Just_project.Migrations
 
                     b.Property<int>("ComponentsId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("Language")
                         .IsRequired()

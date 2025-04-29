@@ -4,5 +4,6 @@
     {
         public List<ComponentsViewModel> Components { get; set; }
         public List<BlogViewModel> Blogs { get; set; }
+
     }
 }
