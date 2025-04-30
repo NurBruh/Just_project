@@ -123,6 +123,9 @@
   <data name="Build" xml:space="preserve">
     <value>Discounted Builds</value>
   </data>
+  <data name="Category" xml:space="preserve">
+    <value>PC Components</value>
+  </data>
   <data name="First_sales" xml:space="preserve">
     <value>10% discount for first buyers</value>
   </data>

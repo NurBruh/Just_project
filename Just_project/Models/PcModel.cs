@@ -9,6 +9,7 @@ namespace Just_project.Models
         
         public DateTime CreateAt { get; set; } = DateTime.Now;
         public string CreatedBy { get; set; } = "admin";
+        public byte[] ImagePath { get; set; }
         public ICollection<PcTranslationModel> PcTranslations { get; set; }
     }
 }

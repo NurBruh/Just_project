@@ -2,7 +2,7 @@
 
 <h2>Добавить ПК с переводами</h2>
 
-<form asp-action="AddPc" method="post">
+<form asp-action="AddPc" method="post" enctype="multipart/form-data">
     <div>
         <label>Price</label>
         <input asp-for="Price" class="form-control" />
@@ -36,6 +36,11 @@
     <div>
         <label>Description</label>
         <textarea asp-for="Description_kk" class="form-control"></textarea>
+    </div>
+    <h4>Image</h4>
+    <div>
+        <label>Upload Image</label>
+        <input asp-for="ImagePath" type="file" class="form-control" />
     </div>
 
     <button type="submit" class="btn btn-primary mt-3">Сохранить</button>

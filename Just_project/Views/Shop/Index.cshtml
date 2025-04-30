@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
-
+@model HomePageModels
 @{
     ViewData["Title"] = "Shop";
 }
@@ -31,6 +31,33 @@
                             </div>
                         </a>
                     </div>
+                   @*  @foreach (var complist in Model.Complists)
+                    {
+                        string base64 = Convert.ToBase64String(complist.ImagePath);
+                        string imageSrc = $"data:image/jpg;base64,{base64}";
+                        <div role="listitem" class="w-dyn-item">
+                            <a data-w-id="a16c9442-6d4b-2198-250f-3ba8a8cec759" href="/product/spray-gun-hvlp-gravity-feed" class="product-item w-inline-block">
+
+                                <div class="product-image-wrap">
+                                    <img alt="image"
+                                         loading="lazy"
+                                         data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
+                                         src="@imageSrc"
+                                         sizes="(max-width: 479px) 94vw, (max-width: 991px) 46vw, (max-width: 1279px) 25vw, (max-width: 1439px) 22vw, 21vw"
+                                         class="product-image" />
+                                    <div style="opacity:0" class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                    <div style="opacity:0" class="product-hover-overlay"></div>
+                                </div>
+                                <div class="product-info-wrap">
+                                    <h2 class="product-title">@complist.Title</h2>
+                                    <div class="product-price-wrap">
+                                        <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="product-price">@complist.KZTPrice</div>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    } *@
                     <!-- PRODUCT ITEM 2 -->
                     <div role="listitem" class="w-dyn-item">
                         <a data-w-id="04e1353a-1709-d5fd-b655-09a804111d26" href="/product/gearo-15-inch-plastic-tool-bag" class="product-item w-inline-block">
@@ -157,6 +184,34 @@
                             </div>
                         </a>
                     </div>
+                    @foreach (var pc in Model.PCs)
+                    {
+                        string base64 = Convert.ToBase64String(pc.ImagePath);
+                        string imageSrc = $"data:image/jpg;base64,{base64}";
+                        <div role="listitem" class="w-dyn-item">
+                            <a data-w-id="a16c9442-6d4b-2198-250f-3ba8a8cec759" href="/product/spray-gun-hvlp-gravity-feed" class="product-item w-inline-block">
+
+                                <div class="product-image-wrap">
+                                    <img alt="image"
+                                         loading="lazy"
+                                         data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
+                                         src="@imageSrc"
+                                         sizes="(max-width: 479px) 94vw, (max-width: 991px) 46vw, (max-width: 1279px) 25vw, (max-width: 1439px) 22vw, 21vw"
+                                         class="product-image" />
+                                    <div style="opacity:0" class="product-button-item-wrap"><div class="button-dark">Shop now</div></div>
+                                    <div style="opacity:0" class="product-hover-overlay"></div>
+                                </div>
+                                <div class="product-info-wrap">
+                                    <h2 class="product-title">@pc.Title</h2>
+                                    <div class="product-price-wrap">
+                                        <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="product-price">@pc.ShowPrice</div>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>

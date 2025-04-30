@@ -123,6 +123,9 @@
   <data name="Build" xml:space="preserve">
     <value>Жеңілдікпен құрастыру</value>
   </data>
+  <data name="Category" xml:space="preserve">
+    <value>ДК Компоненттері</value>
+  </data>
   <data name="First_sales" xml:space="preserve">
     <value>Алғашқы тұтынушыларға 10% жеңілдік беріледі</value>
   </data>

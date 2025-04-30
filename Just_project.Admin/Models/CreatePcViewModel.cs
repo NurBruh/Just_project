@@ -12,5 +12,6 @@
         public string Description_kk { get; set; }
 
         public float Price { get; set; }
+        public IFormFile ImagePath { get; set; }
     }
 }

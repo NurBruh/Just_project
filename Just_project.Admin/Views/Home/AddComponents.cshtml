@@ -1,0 +1,44 @@
+﻿@model Just_project.Admin.Models.CreateComponentsViewModel
+
+<h2>Добавить компоненты с переводами</h2>
+
+<form asp-action="AddComponents" method="post" enctype="multipart/form-data">
+
+
+    <h4>English</h4>
+    <div>
+        <label>Title</label>
+        <input asp-for="Title_en" class="form-control" />
+		<label>Description</label>
+		<input asp-for="Description_en" class="form-control" />
+    </div>
+   
+    <h4>Russian</h4>
+    <div>
+        <label>Title</label>
+        <input asp-for="Title_ru" class="form-control" />
+		<label>Description</label>
+        <input asp-for="Description_ru" class="form-control" />
+    </div>
+  
+
+    <h4>Kazakh</h4>
+    <div>
+        <label>Title</label>
+        <input asp-for="Title_kk" class="form-control" />
+		<label>Description</label>
+        <input asp-for="Description_kk" class="form-control" />
+    </div>
+
+	<h4>Price</h4>
+    <div>
+		<label>Price</label>
+		<input asp-for="Price" class="form-control" />
+    </div>
+    <div>
+        <label>Upload Image</label>
+        <input asp-for="ImagePath" type="file" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+</form>

@@ -1,22 +1,88 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Just_project.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Just_project.Controllers
 {
     public class CategoryController : Controller
     {
+        private readonly AppDbContext _db;
+
+        public CategoryController(AppDbContext db)
+        {
+            _db = db;
+        }
         public IActionResult Index()
         {
-            return View();
+            var culture = CultureInfo.CurrentUICulture.Name;
+            var pcs = _db.Pcs
+                .Include(p => p.PcTranslations)
+                .ToList();
+
+            var PcViewModels = pcs.Select(p =>
+            {
+                var translation = p.PcTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+
+                return new PcViewModel
+                {
+                    Id = p.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    ImagePath = p.ImagePath,
+                    Price = p.Price
+                };
+            }).ToList();
+            return View(PcViewModels);
         }
 
         public IActionResult Components()
         {
-            return View();
+            var culture = CultureInfo.CurrentUICulture.Name;
+            var pcs = _db.Pcs
+                .Include(p => p.PcTranslations)
+                .ToList();
+
+            var PcViewModels = pcs.Select(p =>
+            {
+                var translation = p.PcTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+
+                return new PcViewModel
+                {
+                    Id = p.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    ImagePath = p.ImagePath,
+                    Price = p.Price
+                };
+            }).ToList();
+            return View(PcViewModels);
         }
 
         public IActionResult Ready()
         {
-            return View();
+            var culture = CultureInfo.CurrentUICulture.Name;
+            var pcs = _db.Pcs
+                .Include(p => p.PcTranslations)
+                .ToList();
+
+            var PcViewModels = pcs.Select(p =>
+            {
+                var translation = p.PcTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+
+                return new PcViewModel
+                {
+                    Id = p.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    ImagePath = p.ImagePath,
+                    Price = p.Price
+                };
+            }).ToList();
+            return View(PcViewModels);
         }
 
         public IActionResult Custom()
@@ -29,11 +95,49 @@ namespace Just_project.Controllers
         }
         public IActionResult Gaming()
         {
-            return View();
+            var culture = CultureInfo.CurrentUICulture.Name;
+            var pcs = _db.Pcs
+                .Include(p => p.PcTranslations)
+                .ToList();
+
+            var PcViewModels = pcs.Select(p =>
+            {
+                var translation = p.PcTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+
+                return new PcViewModel
+                {
+                    Id = p.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    ImagePath = p.ImagePath,
+                    Price = p.Price
+                };
+            }).ToList();
+            return View(PcViewModels);
         }
         public IActionResult Office()
         {
-            return View();
+            var culture = CultureInfo.CurrentUICulture.Name;
+            var pcs = _db.Pcs
+                .Include(p => p.PcTranslations)
+                .ToList();
+
+            var PcViewModels = pcs.Select(p =>
+            {
+                var translation = p.PcTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+
+                return new PcViewModel
+                {
+                    Id = p.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    ImagePath = p.ImagePath,
+                    Price = p.Price
+                };
+            }).ToList();
+            return View(PcViewModels);
         }
         [HttpPost]
         public IActionResult RedirectToComponents()

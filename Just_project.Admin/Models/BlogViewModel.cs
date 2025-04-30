@@ -6,6 +6,7 @@
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime CreateTime { get; set; } = DateTime.Now;
-        public string Date => CreateTime.ToString("dd MMMM yyyy");
+        public string Date => CreateTime.ToShortDateString();
+        public byte[] ImagePath { get; set; }
     }
 }

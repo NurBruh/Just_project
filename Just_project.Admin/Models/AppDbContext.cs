@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Just_project.Admin.Models
 {
-    
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
@@ -12,6 +10,10 @@ namespace Just_project.Admin.Models
         public DbSet<PcTranslationModel> PcTranslations { get; set; }
         public DbSet<BlogModel> Blogs { get; set; }
         public DbSet<BlogTranslationModel> BlogTranslations { get; set; }
+        public DbSet<ComponentsModel> Components { get; set; }
+        public DbSet<ComponentsTranslationModel> ComponentsTranslations { get; set; }
+        public DbSet<ComplistModel> Complists { get; set; }
+        public DbSet<ComplistTranslationModel> ComplistTranslations { get; set; }
         //public DbSet<CreatePcViewModel> CreatePcViewModels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,10 +29,16 @@ namespace Just_project.Admin.Models
                 .HasOne(bt => bt.BlogModel)
                 .WithMany(b => b.BlogTranslations)
                 .HasForeignKey(bt => bt.BlogId);
+            modelBuilder.Entity<ComponentsTranslationModel>()
+                .HasOne(ct => ct.ComponentsModel)
+                .WithMany(c => c.ComponentsTranslations)
+                .HasForeignKey(ct => ct.ComponentsId);
+            modelBuilder.Entity<ComplistTranslationModel>()
+                .HasOne(ct => ct.ComplistModel)
+                .WithMany(c => c.ComplistTranslations)
+                .HasForeignKey(ct => ct.ComplistId);
         }
 
-
     }
-
     
-}
+ }

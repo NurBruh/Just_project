@@ -58,6 +58,10 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 });
 
 
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add<Just_project.Filters.BlockInternetExplorerFilter>();
+});
 
 
 
@@ -101,6 +105,17 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Remove("Server"); 
+    context.Response.Headers.Add("X-Powered-By", "666");
+    context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+    context.Response.Headers.Add("X-Frame-Options", "DENY");
+    context.Response.Headers.Add("Referrer-Policy", "no-referrer");
+    
+    await next();
+});
+
 
 app.MapControllerRoute(
     name: "default",

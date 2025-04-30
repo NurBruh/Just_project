@@ -7,5 +7,6 @@
         public string Description { get; set; }
         public float Price { get; set; }
         public string KZTPrice => $"{Price}  ₸";
+        public byte[] ImagePath { get; set; }
     }
 }

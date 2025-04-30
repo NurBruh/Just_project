@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Just_project.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController>? _logger;
@@ -74,11 +75,32 @@ namespace Just_project.Controllers
                 };
             }).ToList();
 
+            var pcs = _db.Pcs
+                .Include(p => p.PcTranslations)
+                .ToList();
+
+            var PcViewModels = pcs.Select(p =>
+            {
+                var translation = p.PcTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+
+                return new PcViewModel
+                {
+                    Id = p.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    ImagePath = p.ImagePath,
+                    Price = p.Price 
+                };
+            }).ToList();
+
+
             var model = new HomePageModels
             {
                 Components = ComponentsViewModels,
                 Blogs = BlogViewModels,
-                Complists = ComplistViewModels
+                Complists = ComplistViewModels,
+                PCs = PcViewModels
             };
             return View(model);
         }
@@ -149,11 +171,21 @@ namespace Just_project.Controllers
         
 
         [HttpPost]
-        public IActionResult AddPc(CreatePcViewModel model)
+        public async Task<IActionResult> AddPc(CreatePcViewModel model)
         {
+            byte[] imageData = null;
+            if (model.ImagePath != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await model.ImagePath.CopyToAsync(memoryStream);
+                    imageData = memoryStream.ToArray();
+                }
+            }
             var pc = new PcModel
             {
                 Price = model.Price,
+                ImagePath = imageData,
                 PcTranslations = new List<PcTranslationModel>
                 {
                     new PcTranslationModel { Language = "en-US", Title = model.Title_en, Description = model.Description_en },
@@ -175,6 +207,7 @@ namespace Just_project.Controllers
         [HttpPost]
         public IActionResult AddComponents(CreateComponentsViewModel model)
         {
+
             var component = new ComponentsModel
             {
                 Price = model.Price,

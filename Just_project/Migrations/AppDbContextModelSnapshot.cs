@@ -141,6 +141,10 @@ namespace Just_project.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<byte[]>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("longblob");
+
                     b.Property<float>("Price")
                         .HasColumnType("float");
 
@@ -193,6 +197,10 @@ namespace Just_project.Migrations
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<byte[]>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("longblob");
 
                     b.Property<float>("Price")
                         .HasColumnType("float");

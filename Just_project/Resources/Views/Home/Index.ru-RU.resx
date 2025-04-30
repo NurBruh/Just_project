@@ -123,6 +123,9 @@
   <data name="Build" xml:space="preserve">
     <value>Сборки со скидкой</value>
   </data>
+  <data name="Category" xml:space="preserve">
+    <value>ПК комплектующие</value>
+  </data>
   <data name="First_sales" xml:space="preserve">
     <value>Первым покупателям скидка 10%</value>
   </data>

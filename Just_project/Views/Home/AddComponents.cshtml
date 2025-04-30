@@ -1,8 +1,8 @@
 ﻿@model Just_project.Models.CreateComponentsViewModel
 
-<h2>Добавить ПК с переводами</h2>
+<h2>Добавить компоненты с переводами</h2>
 
-<form asp-action="AddComponents" method="post">
+<form asp-action="AddComponents" method="post" enctype="multipart/form-data">
 
 
     <h4>English</h4>
@@ -35,7 +35,10 @@
 		<label>Price</label>
 		<input asp-for="Price" class="form-control" />
     </div>
-   
+    <div>
+        <label>Upload Image</label>
+        <input asp-for="ImagePath" type="file" class="form-control" />
+    </div>
 
     <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
 </form>
