@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Just_project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250429155501_aoaoao")]
-    partial class aoaoao
+    [Migration("20250509134417_test")]
+    partial class test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -144,6 +144,10 @@ namespace Just_project.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<byte[]>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("longblob");
+
                     b.Property<float>("Price")
                         .HasColumnType("float");
 
@@ -196,6 +200,10 @@ namespace Just_project.Migrations
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<byte[]>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("longblob");
 
                     b.Property<float>("Price")
                         .HasColumnType("float");

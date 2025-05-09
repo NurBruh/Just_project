@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace Just_project.Migrations
+namespace Just_project.Admin.Migrations
 {
     /// <inheritdoc />
-    public partial class components : Migration
+    public partial class admin : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

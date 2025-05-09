@@ -56,42 +56,95 @@ namespace Just_project.API.Controllers
         }
 
         [HttpGet("getAll")]
-        public IActionResult GetAll()
+        
+        public List<PcTranslationModel> GetAll()
         {
-            var pcs = _db.Pcs.Include(p => p.PcTranslations).ToList();
-            return Ok(pcs);
+            return _db.PcTranslations.ToList();
         }
 
-        [HttpGet("getById/{id:int}")]
-        public IActionResult GetById(int id)
+        [HttpGet("byPcId/{pcId:int}")]
+        public ActionResult<List<PcTranslationModel>> GetByPcId(int pcId)
         {
-            var pc = _db.Pcs.Include(p => p.PcTranslations).FirstOrDefault(p => p.Id == id);
-            if (pc == null)
-                return NotFound(new { message = "ПК не найден" });
+            var translations = _db.PcTranslations
+                .Where(t => t.PcId == pcId)
+                .Select(t => new PcTranslationModel
+                {
+                    Id = t.Id,
+                    PcId = t.PcId,
+                    Language = t.Language,
+                    Title = t.Title,
+                    Description = t.Description,
+                    PcModel = null 
+                })
+                .ToList();
 
-            return Ok(pc);
+            if (!translations.Any())
+                return NotFound(new { message = "Переводы для указанного ПК не найдены" });
+
+            return Ok(translations);
         }
+
+
+
 
         [HttpPut("update")]
-        public IActionResult Update([FromForm] PcModel model)
+        public IActionResult Update([FromForm] UpdatePcViewModel model)
         {
             try
             {
-                var pc = _db.Pcs.Include(p => p.PcTranslations).FirstOrDefault(p => p.Id == model.Id);
+                var pc = _db.Pcs
+                    .Include(p => p.PcTranslations)
+                    .FirstOrDefault(p => p.Id == model.Id);
+
                 if (pc == null)
                     return NotFound(new { message = "ПК не найден" });
 
                 pc.Price = model.Price;
-                // Здесь можно обновить переводы, если нужно
+
+                
+                if (model.NewImage != null)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        model.NewImage.CopyTo(memoryStream);
+                        pc.ImagePath = memoryStream.ToArray();
+                    }
+                }
+
+                
+                foreach (var translation in pc.PcTranslations)
+                {
+                    switch (translation.Language)
+                    {
+                        case "en-US":
+                            translation.Title = model.Title_en;
+                            translation.Description = model.Description_en;
+                            break;
+                        case "ru-RU":
+                            translation.Title = model.Title_ru;
+                            translation.Description = model.Description_ru;
+                            break;
+                        case "kk-KZ":
+                            translation.Title = model.Title_kk;
+                            translation.Description = model.Description_kk;
+                            break;
+                    }
+                }
 
                 _db.SaveChanges();
-                return Ok(new { message = "ПК обновлён!" });
+                return Ok(new { message = "ПК успешно обновлён!" });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message, inner = ex.InnerException?.Message });
+                return BadRequest(new
+                {
+                    message = ex.Message,
+                    inner = ex.InnerException?.Message
+                });
             }
         }
+
+
 
         [HttpDelete("delete/{id:int}")]
         public IActionResult Delete(int id)
