@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Builder
+﻿@* @using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Microsoft.Extensions.Options
 @using System.Globalization
@@ -14,3 +14,27 @@
 	</span>
 	<span> | </span>
 }
+
+
+ *@
+
+
+@using Microsoft.Extensions.Options
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> locOptions
+
+<div class="language-selector">
+    <span onclick="toggleLangMenu()" class="lang-trigger">
+        @Localizer["ChangeLang"] ▾
+    </span>
+    <div id="langMenu" class="lang-menu hidden">
+        @foreach (CultureInfo item in locOptions.Value.SupportedUICultures!)
+        {
+            <div class="lang-option" onclick="ChangeCulture('@item.Name')">
+                @item.NativeName (@item.TwoLetterISOLanguageName.ToUpper())
+            </div>
+        }
+    </div>
+</div>

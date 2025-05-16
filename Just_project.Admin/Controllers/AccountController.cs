@@ -93,5 +93,52 @@ namespace Just_project.Admin.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Register(string? returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterViewModel model, string? returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = new AppUser
+            {
+                UserName = model.Username,
+                Email = model.Email
+                // Можно добавить другие поля, если добавишь их в AppUser
+            };
+
+            var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                // Вход после регистрации
+                await _signInManager.SignInAsync(user, isPersistent: false);
+                if (!string.IsNullOrEmpty(returnUrl))
+                    return LocalRedirect(returnUrl);
+                return RedirectToAction("Index", "Home");
+            }
+
+            // Выводим ошибки
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
+            return View(model);
+        }
+
     }
 }

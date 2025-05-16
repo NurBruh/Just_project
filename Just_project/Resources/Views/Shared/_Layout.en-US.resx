@@ -192,6 +192,9 @@
   <data name="refund_mess" xml:space="preserve">
     <value>Shop with confidence that our easy refund policy has got you covered.</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
   <data name="Remove" xml:space="preserve">
     <value>Remove</value>
   </data>

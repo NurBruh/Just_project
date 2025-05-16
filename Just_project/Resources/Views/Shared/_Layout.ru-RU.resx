@@ -192,6 +192,9 @@
   <data name="refund_mess" xml:space="preserve">
     <value>Совершайте покупки с уверенностью, что наша простая политика возврата средств вам поможет.</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
   <data name="Remove" xml:space="preserve">
     <value>Удалить</value>
   </data>

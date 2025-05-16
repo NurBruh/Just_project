@@ -22,7 +22,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     new MySqlServerVersion(new Version(8, 0, 35))));
 
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection1")));
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 35))));
 
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()

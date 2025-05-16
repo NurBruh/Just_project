@@ -14,6 +14,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en" class="ie8 no-js">
+<html lang="en" class="ie8 no-js">
 <html lang="en" class="ie9 no-js">
 <html lang="en" class="no-js">
 <!--<![endif]-->
@@ -150,21 +151,9 @@ License: You must have a valid license purchased only from themeforest(the above
 						</a>
 						<ul class="sub-menu">
 							<li>
-								<a href="index.html">
-									<i class="icon-bar-chart"></i>
-									Default Dashboard
-								</a>
-							</li>
-							<li class="active">
-								<a href="index_2.html">
-									<i class="icon-bulb"></i>
-									New Dashboard #1
-								</a>
-							</li>
-							<li>
-								<a href="index_3.html">
-									<i class="icon-graph"></i>
-									New Dashboard #2
+								<a asp-controller="home" asp-action="index">
+									<i class="icon-basket"></i>
+									Начальная страница
 								</a>
 							</li>
 						</ul>
@@ -172,22 +161,36 @@ License: You must have a valid license purchased only from themeforest(the above
 					<li>
 						<a href="javascript:;">
 							<i class="icon-basket"></i>
-							<span class="title">Справочники</span>
+							<span class="title">Администрирование</span>
 							<span class="arrow "></span>
 						</a>
 						<ul class="sub-menu">
 							<li>
-								<a href="@Url.Action("Position","Home")">
-									<i class="icon-home"></i>
-									Должностей
+								<a asp-controller="home" asp-action="addpc">
+									<i class="icon-basket"></i>
+									Компьютер
 								</a>
 							</li>
 							<li>
-								<a href="ecommerce_orders.html">
+								<a asp-controller="home" asp-action="addcomplist">
 									<i class="icon-basket"></i>
-									Социальные сети
+									Меню комплектующих 
 								</a>
 							</li>
+							<li>
+								<a asp-controller="home" asp-action="addcomponents">
+									<i class="icon-basket"></i>
+									Комплектующие
+								</a>
+							</li>
+							<li>
+								<a asp-controller="home" asp-action="addblog">
+									<i class="icon-basket"></i>
+									Блоги/Новости
+								</a>
+							</li>
+							
+							
 
 						</ul>
 					</li>

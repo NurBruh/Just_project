@@ -18,6 +18,7 @@
 	<meta property="twitter:description" content="XXXkeldyPc - индивидуальная сборка компьютеров под различные задачи" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="~/css/webflow-style.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/bruh.css" asp-append-version="true" />
 	<link rel="shortcut icon" href="~/images/gearo-logo.png" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="~/images/gearo-logo.png" />
 	<script>
@@ -64,8 +65,13 @@
                     <a class="nav-link w-nav-link" asp-controller="Blog" asp-action="Index">@Localizer["Blog"]</a>
                     <a class="nav-link w-nav-link" asp-controller="Contact" asp-action="Index">@Localizer["Contact Us"]</a>
                     <a class="nav-link w-nav-link" asp-controller="Account" asp-action="Login">@Localizer["Login"]</a>
-                    
+                    <a class="nav-link w-nav-link" asp-controller="Account" asp-action="Login">@Localizer["Register"]</a>
+
+                    <div class="nav-link w-nav-link">
                     @Html.Partial("_Langs")
+                    </div>
+
+
                 </nav>
                 <div id="w-node-f31a0de7-0e5d-4f6d-ed05-08921b14af1b-1b14aef3" class="navbar-right">
                     <div data-hover="true" data-delay="0" data-w-id="f31a0de7-0e5d-4f6d-ed05-08921b14af1c" class="button-dropdown w-dropdown">
@@ -219,7 +225,8 @@
 	</a> -->
 	<script src="~/js/jquery.js" type="text/javascript"></script>
 	<script src="~/js/webflow-script.js" type="text/javascript"></script>
-    <script>
+    
+    @* <script>
         function ChangeCulture(culture) {
     $.ajax({
         url: '/Home/ChangeCulture',
@@ -231,7 +238,36 @@
         }
     });
 }
+    </script> *@
+    <script>
+        function ChangeCulture(culture) {
+            fetch('/Home/ChangeCulture', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `culture=${encodeURIComponent(culture)}`
+            })
+            .then(res => {
+                if (res.ok) location.reload();
+                else alert("Failed to change language");
+            });
+        }
+
+        function toggleLangMenu() {
+            const menu = document.getElementById("langMenu");
+            menu.classList.toggle("hidden");
+        }
+
+        // Optional: hide when clicking outside
+        window.addEventListener('click', function (e) {
+            const menu = document.getElementById("langMenu");
+            if (!e.target.closest('.language-selector')) {
+                menu.classList.add('hidden');
+            }
+        });
     </script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

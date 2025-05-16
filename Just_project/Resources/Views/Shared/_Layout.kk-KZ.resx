@@ -192,6 +192,9 @@
   <data name="refund_mess" xml:space="preserve">
     <value>Біздің оңай қайтару саясатымыз сізге көмектесетініне сенімді түрде сатып алыңыз.</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Тіркелу</value>
+  </data>
   <data name="Remove" xml:space="preserve">
     <value>Жою</value>
   </data>
