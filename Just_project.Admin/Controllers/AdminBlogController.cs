@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace Just_project.Admin.Controllers
 {
@@ -57,11 +58,54 @@ namespace Just_project.Admin.Controllers
             return View(model);
         }
 
+        // GET: AdminBlog/Edit/5
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var response = await _httpClient.GetAsync($"BlogAPI/getById/{id}");
+            if (!response.IsSuccessStatusCode) return NotFound();
+
+            var json = await response.Content.ReadAsStringAsync();
+            var blog = JsonConvert.DeserializeObject<BlogViewModel>(json);
+            return View(blog);
+        }
+
+        // POST: AdminBlog/Edit/5
         [HttpPost]
+        public async Task<IActionResult> Edit(int id, BlogViewModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+            var response = await _httpClient.PutAsync($"BlogAPI/update/{id}", content);
+
+            if (response.IsSuccessStatusCode)
+                return RedirectToAction(nameof(BlogList));
+
+            ModelState.AddModelError("", "Ошибка при обновлении записи.");
+            return View(model);
+        }
+        // GET: AdminBlog/Delete/5
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var response = await _httpClient.DeleteAsync($"BlogAPI/delete{id}");
-            return RedirectToAction("Index");
+            var response = await _httpClient.GetAsync($"BlogAPI/getById/{id}");
+            if (!response.IsSuccessStatusCode) return NotFound();
+
+            var json = await response.Content.ReadAsStringAsync();
+            var blog = JsonConvert.DeserializeObject<BlogViewModel>(json);
+            return View(blog);
         }
+
+        // POST: AdminBlog/Delete/5
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var response = await _httpClient.DeleteAsync($"BlogAPI/delete/{id}");
+            return RedirectToAction(nameof(BlogList));
+        }
+
+
+        
     }
 }

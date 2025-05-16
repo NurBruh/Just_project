@@ -1,7 +1,7 @@
 ﻿@model List<Just_project.Admin.Models.BlogTranslationModel>
 
 <h2>Список блогов</h2>
-<a href="/AdminBlog/Create" class="btn btn-success mb-3">Добавить новый</a>
+<a href="/AdminBlog/AddBlog" class="btn btn-success mb-3">Добавить новый</a>
 
 <table class="table table-bordered">
     <thead>
@@ -22,11 +22,14 @@
                 <td>@blog.Title</td>
                 <td>@blog.Description</td>
                 <td>
-                    <form method="post" asp-action="Delete" asp-controller="AdminBlog">
-                        <input type="hidden" name="id" value="@blog.BlogId" />
+                    <a class="btn btn-primary btn-sm me-2" asp-action="Edit" asp-controller="AdminBlog" asp-route-id="@blog.BlogId">Изменить</a>
+
+                    <form asp-action="Delete" asp-controller="AdminBlog" asp-route-id="@blog.BlogId" method="get" style="display:inline;">
                         <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
                     </form>
+
                 </td>
+
             </tr>
         }
     </tbody>

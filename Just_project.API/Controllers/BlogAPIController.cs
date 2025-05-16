@@ -131,7 +131,7 @@ namespace Just_project.API.Controllers
             }
         }
 
-        [HttpDelete("delete{id:int}")]
+        [HttpDelete("delete/{id:int}")]
         public IActionResult DeleteBlog(int id)
         {
             try
