@@ -118,7 +118,7 @@ namespace Just_project.API.Controllers
                 return BadRequest(new { message = ex.Message, inner = ex.InnerException?.Message });
             }
         }
-        [HttpDelete("delete{id:int}")]
+        [HttpDelete("delete/{id:int}")]
         public IActionResult DeleteComplist(int id)
         {
             try
