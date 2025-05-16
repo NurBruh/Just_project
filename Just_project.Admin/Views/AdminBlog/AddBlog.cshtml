@@ -1,0 +1,24 @@
+﻿@model Just_project.Admin.Models.CreateBlogViewModel
+
+<h2>Добавление блога</h2>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div>
+        <label>Изображение</label>
+        <input type="file" name="ImagePath" class="form-control" />
+    </div>
+
+    <h4>English</h4>
+    <input asp-for="Title_en" placeholder="Title" class="form-control" />
+    <textarea asp-for="Description_en" class="form-control"></textarea>
+
+    <h4>Russian</h4>
+    <input asp-for="Title_ru" placeholder="Title" class="form-control" />
+    <textarea asp-for="Description_ru" class="form-control"></textarea>
+
+    <h4>Kazakh</h4>
+    <input asp-for="Title_kk" placeholder="Title" class="form-control" />
+    <textarea asp-for="Description_kk" class="form-control"></textarea>
+
+    <button type="submit" class="btn btn-primary mt-3">Создать</button>
+</form>

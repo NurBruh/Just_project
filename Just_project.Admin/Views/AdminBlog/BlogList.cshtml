@@ -1,0 +1,33 @@
+﻿@model List<Just_project.Admin.Models.BlogTranslationModel>
+
+<h2>Список блогов</h2>
+<a href="/AdminBlog/Create" class="btn btn-success mb-3">Добавить новый</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Язык</th>
+            <th>Заголовок</th>
+            <th>Описание</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var blog in Model)
+        {
+            <tr>
+                <td>@blog.BlogId</td>
+                <td>@blog.Language</td>
+                <td>@blog.Title</td>
+                <td>@blog.Description</td>
+                <td>
+                    <form method="post" asp-action="Delete" asp-controller="AdminBlog">
+                        <input type="hidden" name="id" value="@blog.BlogId" />
+                        <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

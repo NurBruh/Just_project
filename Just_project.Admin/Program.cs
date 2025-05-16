@@ -35,6 +35,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
 builder.Services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/Login");
 
 #endregion
+builder.Services.AddHttpClient();
 
 
 var app = builder.Build();
