@@ -1,10 +1,12 @@
 ﻿using Just_project.Admin.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 
 namespace Just_project.Admin.Controllers
 {
+    [Authorize]
     public class BlogController : Controller
     {
         private readonly HttpClient _httpClient;

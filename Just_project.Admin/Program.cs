@@ -3,7 +3,8 @@ using Microsoft.Extensions.Configuration; // Add this using directive
 using Microsoft.Extensions.DependencyInjection; // Add this using directive
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 

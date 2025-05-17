@@ -1,10 +1,13 @@
 ﻿using Just_project.Admin.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 
+[Authorize]
 public class ComponentsController : Controller
 {
+    
     private readonly HttpClient _http;
 
     public ComponentsController(IHttpClientFactory factory)

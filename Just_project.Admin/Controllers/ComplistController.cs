@@ -2,9 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
-
+using Microsoft.AspNetCore.Authorization;
 namespace Just_project.Admin.Controllers
 {
+    [Authorize]
     public class ComplistController : Controller
     {
         private readonly HttpClient _httpClient;

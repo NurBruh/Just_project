@@ -172,31 +172,83 @@ License: You must have a valid license purchased only from themeforest(the above
 								</a>
 							</li>
 							<li>
-								<a asp-controller="home" asp-action="addcomplist">
+								<a asp-controller="complist" asp-action="addcomplist">
 									<i class="icon-basket"></i>
-									Меню комплектующих 
+									Добавить меню 
 								</a>
 							</li>
 							<li>
-								<a asp-controller="home" asp-action="addcomponents">
+								<a asp-controller="complist" asp-action="editcomplist">
+									<i class="icon-basket"></i>
+									Изменить меню 
+								</a>
+							</li>
+							<li>
+								<a asp-controller="complist" asp-action="complistlist">
+									<i class="icon-basket"></i>
+									Меню 
+								</a>
+							</li>
+							<li>
+								<a asp-controller="complist" asp-action="deletecomplist">
+									<i class="icon-basket"></i>
+									Удалить меню
+								</a>
+							</li>
+							<li>
+								<a asp-controller="components" asp-action="addcomponents">
 									<i class="icon-basket"></i>
 									Комплектующие
 								</a>
 							</li>
 							<li>
-								<a asp-controller="adminblog" asp-action="bloglist">
+								<a asp-controller="components" asp-action="componentsadd">
+									<i class="icon-basket"></i>
+									Комплектующие добавить
+								</a>
+							</li>
+							<li>
+								<a asp-controller="components" asp-action="componentsedit">
+									<i class="icon-basket"></i>
+									Комплектующие изменить
+								</a>
+							</li>
+							<li>
+								<a asp-controller="components" asp-action="componentslist">
+									<i class="icon-basket"></i>
+									Комплектующие лист
+								</a>
+							</li>
+							<li>
+								<a asp-controller="components" asp-action="componentsdelete">
+									<i class="icon-basket"></i>
+									Комплектующие удалить
+								</a>
+							</li>
+							<li>
+								<a asp-controller="blog" asp-action="bloglist">
 									<i class="icon-basket"></i>
 									Блоги/Новости
 								</a>
 							</li>
 							<li>
-								<a asp-controller="adminblog" asp-action="addblog">
+								<a asp-controller="blog" asp-action="addblog">
 									<i class="icon-basket"></i>
 									Добавить блоги/новости
 								</a>
 							</li>
-							
-							
+							<li>
+								<a asp-controller="blog" asp-action="editblog">
+									<i class="icon-basket"></i>
+									Изменить блоги/новости
+								</a>
+							</li>
+							<li>
+								<a asp-controller="blog" asp-action="deleteblog">
+									<i class="icon-basket"></i>
+									Удалить блоги/новости
+								</a>
+							</li>
 
 						</ul>
 					</li>
