@@ -1,0 +1,16 @@
+﻿@model Just_project.Admin.Models.ComplistTranslationModel
+@{
+    ViewData["Title"] = "Удаление комплектующей ПК";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="alert alert-warning">
+    <p>Вы уверены, что хотите удалить <strong>@Model.Title</strong>?</p>
+</div>
+
+<form asp-action="DeleteComplistConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.ComplistId" />
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a asp-action="ComplistList" class="btn btn-secondary">Отмена</a>
+</form>

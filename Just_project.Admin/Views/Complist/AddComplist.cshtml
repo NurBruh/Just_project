@@ -1,0 +1,31 @@
+﻿@model Just_project.Admin.Models.CreateComplistViewModel
+@{
+    ViewData["Title"] = "Добавить комплектующую ПК";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="AddComplist" enctype="multipart/form-data" method="post">
+    <div class="mb-3">
+        <label class="form-label">Название (EN)</label>
+        <input asp-for="Title_en" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Название (RU)</label>
+        <input asp-for="Title_ru" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Название (KK)</label>
+        <input asp-for="Title_kk" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Изображение</label>
+        <input asp-for="ImagePath" type="file" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Добавить</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+}

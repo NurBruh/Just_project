@@ -1,0 +1,39 @@
+﻿@model Just_project.Admin.Models.CreateBlogViewModel
+
+<h2>Добавить блог</h2>
+
+<form asp-action="AddBlog" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Заголовок (EN)</label>
+        <input asp-for="Title_en" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Описание (EN)</label>
+        <textarea asp-for="Description_en" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Заголовок (RU)</label>
+        <input asp-for="Title_ru" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Описание (RU)</label>
+        <textarea asp-for="Description_ru" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Заголовок (KK)</label>
+        <input asp-for="Title_kk" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Описание (KK)</label>
+        <textarea asp-for="Description_kk" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Изображение</label>
+        <input asp-for="ImagePath" type="file" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Добавить</button>
+</form>

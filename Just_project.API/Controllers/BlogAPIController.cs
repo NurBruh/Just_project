@@ -60,30 +60,29 @@ namespace Just_project.API.Controllers
         }
 
         [HttpGet("getById/{id:int}")]
-        public ActionResult<List<BlogTranslationModel>> GetBlogById(int blogId)
+        public ActionResult<List<BlogTranslationModel>> GetBlogById(int id)
         {
-           
-                var translations = _db.BlogTranslations
-                    .Where(t => t.BlogId == blogId)
-                    .Select(t => new BlogTranslationModel
-                    {
-                        Id = t.Id,
-                        BlogId = t.BlogId,
-                        Language = t.Language,
-                        Title = t.Title,
-                        Description = t.Description,
-                        BlogModel = null
-                    })
-                    .ToList();
-
-                if (!translations.Any())
+            var translations = _db.BlogTranslations
+                .Where(t => t.BlogId == id)
+                .Select(t => new BlogTranslationModel
                 {
-                    return NotFound(new { message = "Переводы для указанного блога не найдены." });
-                }
+                    Id = t.Id,
+                    BlogId = t.BlogId,
+                    Language = t.Language,
+                    Title = t.Title,
+                    Description = t.Description,
+                    BlogModel = null
+                })
+                .ToList();
 
-                return Ok(translations);
-            
+            if (!translations.Any())
+            {
+                return NotFound(new { message = "Переводы для указанного блога не найдены." });
+            }
+
+            return Ok(translations);
         }
+
         [HttpPut("update")]
         public IActionResult UpdateBlog([FromForm] UpdateBlogViewModel model )
         {

@@ -62,15 +62,19 @@ namespace Just_project.API.Controllers
         [HttpGet("getById/{id}")]
         public ActionResult<List<ComponentsTranslationModel>> GetComponentById(int id)
         {
-            var translations = _db.ComponentsTranslations.Where(t => t.ComponentsId == id).Select(t => new ComponentsTranslationModel
-            {
-                Id = t.Id,
-                ComponentsId = t.ComponentsId,
-                Language = t.Language,
-                Title = t.Title,
-                Description = t.Description,
-                ComponentsModel = null
-            }).ToList();
+            //var translations = _db.ComponentsTranslations.Where(t => t.ComponentsId == id).Select(t => new ComponentsTranslationModel
+            //{
+            //    Id = t.Id,
+            //    ComponentsId = t.ComponentsId,
+            //    Language = t.Language,
+            //    Title = t.Title,
+            //    Description = t.Description,
+            //    ComponentsModel = null
+            //}).ToList();
+            var translations = _db.ComponentsTranslations
+        .Include(t => t.ComponentsModel) // добавь Include
+        .Where(t => t.ComponentsId == id)
+        .ToList();
 
             if (!translations.Any())
             {

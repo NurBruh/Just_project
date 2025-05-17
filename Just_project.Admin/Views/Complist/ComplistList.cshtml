@@ -1,0 +1,33 @@
+﻿@model List<Just_project.Admin.Models.ComplistTranslationModel>
+@{
+    ViewData["Title"] = "Список комплектующих ПК";
+}
+
+<h2>@ViewData["Title"]</h2>
+<a class="btn btn-success mb-3" asp-action="AddComplist">Добавить новый</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Язык</th>
+            <th>Название</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ComplistId</td>
+                <td>@item.Language</td>
+                <td>@item.Title</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-action="EditComplist" asp-route-id="@item.ComplistId">Редактировать</a>
+                        <a class="btn btn-danger btn-sm" asp-action="DeleteComplist" asp-route-id="@item.ComplistId">Удалить</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,56 @@
+﻿@model Just_project.Admin.Models.UpdateComponentsViewModel
+
+@{
+    ViewData["Title"] = "Редактировать компонент";
+}
+
+<h2>Редактировать компонент</h2>
+
+<form asp-action="ComponentsEdit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label>Название (англ.)</label>
+        <input asp-for="Title_en" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Описание (англ.)</label>
+        <textarea asp-for="Description_en" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Название (рус.)</label>
+        <input asp-for="Title_ru" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Описание (рус.)</label>
+        <textarea asp-for="Description_ru" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Название (каз.)</label>
+        <input asp-for="Title_kk" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Описание (каз.)</label>
+        <textarea asp-for="Description_kk" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Цена</label>
+        <input asp-for="Price" class="form-control" type="number" step="0.01" min="0" required />
+    </div>
+
+    <div class="form-group">
+        <label>Новое изображение (оставьте пустым, если не менять)</label>
+        <input asp-for="NewImage" class="form-control" type="file" accept="image/*" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="ComponentsList" class="btn btn-secondary">Отмена</a>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+}

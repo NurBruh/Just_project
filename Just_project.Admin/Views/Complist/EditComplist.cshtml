@@ -1,0 +1,32 @@
+﻿@model Just_project.Admin.Models.UpdateComplistViewModel
+@{
+    ViewData["Title"] = "Редактировать комплектующую ПК";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="EditComplist" enctype="multipart/form-data" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label class="form-label">Название (EN)</label>
+        <input asp-for="Title_en" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Название (RU)</label>
+        <input asp-for="Title_ru" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Название (KK)</label>
+        <input asp-for="Title_kk" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Новое изображение (при необходимости)</label>
+        <input asp-for="NewImage" type="file" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+}

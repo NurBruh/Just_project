@@ -40,6 +40,38 @@ namespace Just_project.Controllers
         public IActionResult Components()
         {
             var culture = CultureInfo.CurrentUICulture.Name;
+            var components = _db.Components
+                .Include(c => c.ComponentsTranslations).ToList();
+
+            var ComponentsViewModels = components.Select(c =>
+            {
+                var translation = c.ComponentsTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+                return new ComponentsViewModel
+                {
+                    Id = c.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    Price = c.Price,
+                    ImagePath = c.ImagePath
+
+                };
+            }).ToList();
+
+            var complists = _db.Complists
+                .Include(c => c.ComplistTranslations).ToList();
+            var ComplistViewModels = complists.Select(c =>
+            {
+                var traslation = c.ComplistTranslations.FirstOrDefault(
+                    t => t.Language == culture);
+                return new ComplistViewModel
+                {
+                    Id = c.Id,
+                    Title = traslation?.Title ?? "",
+                    ImagePath = c.ImagePath,
+                };
+            }).ToList();
+
             var pcs = _db.Pcs
                 .Include(p => p.PcTranslations)
                 .ToList();
@@ -58,7 +90,16 @@ namespace Just_project.Controllers
                     Price = p.Price
                 };
             }).ToList();
-            return View(PcViewModels);
+
+
+            var model = new HomePageModels
+            {
+                Components = ComponentsViewModels,
+                
+                Complists = ComplistViewModels,
+                PCs = PcViewModels
+            };
+            return View(model);
         }
 
         public IActionResult Ready()

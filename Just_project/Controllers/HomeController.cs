@@ -56,7 +56,8 @@ namespace Just_project.Controllers
                     Id = c.Id,
                     Title = translation?.Title ?? "",
                     Description = translation?.Description ?? "",
-                    Price = c.Price
+                    Price = c.Price,
+                    ImagePath = c.ImagePath
 
                 };
             }).ToList();
@@ -205,8 +206,17 @@ namespace Just_project.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddComponents(CreateComponentsViewModel model)
+        public async Task<IActionResult> AddComponentsAsync(CreateComponentsViewModel model)
         {
+            byte[] imageData = null;
+            if (model.ImagePath != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await model.ImagePath.CopyToAsync(memoryStream);
+                    imageData = memoryStream.ToArray();
+                }
+            }
 
             var component = new ComponentsModel
             {
@@ -223,6 +233,31 @@ namespace Just_project.Controllers
             _db.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public IActionResult ComponentsList()
+        {
+            var culture = CultureInfo.CurrentUICulture.Name;
+
+            var components = _db.Components
+                .Include(p => p.ComponentsTranslations)
+                .ToList();
+
+            var ComponentsViewModels = components.Select(p =>
+            {
+                var translation = p.ComponentsTranslations.FirstOrDefault(t => t.Language == culture);
+
+                return new PcViewModel
+                {
+                    Id = p.Id,
+                    Title = translation?.Title ?? "",
+                    Description = translation?.Description ?? "",
+                    Price = p.Price
+
+                };
+            }).ToList();
+
+            return View(ComponentsViewModels);
         }
         public IActionResult PcList()
         {

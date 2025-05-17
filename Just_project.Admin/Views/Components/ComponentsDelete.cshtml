@@ -1,0 +1,17 @@
+﻿@model Just_project.Admin.Models.ComponentsViewModel
+
+@{
+    ViewData["Title"] = "Удалить компонент";
+}
+
+<h2>Удалить компонент</h2>
+
+<div class="alert alert-warning">
+    Вы действительно хотите удалить компонент <strong>@Model.Title</strong>?
+</div>
+
+<form asp-action="ConfirmDelete" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a asp-action="ComponentsList" class="btn btn-secondary">Отмена</a>
+</form>

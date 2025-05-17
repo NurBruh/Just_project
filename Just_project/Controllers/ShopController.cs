@@ -46,8 +46,8 @@ namespace Just_project.Controllers
                     Id = c.Id,
                     Title = translation?.Title ?? "",
                     Description = translation?.Description ?? "",
-                    Price = c.Price
-
+                    Price = c.Price,
+                    ImagePath = c.ImagePath
                 };
             }).ToList();
 

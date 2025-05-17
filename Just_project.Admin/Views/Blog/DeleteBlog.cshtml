@@ -1,0 +1,8 @@
+﻿@model int
+
+<h2>Вы уверены, что хотите удалить блог?</h2>
+<form asp-action="DeleteBlog" method="post">
+    <input type="hidden" name="id" value="@Model" />
+    <button type="submit">Удалить</button>
+    <a asp-action="Index">Отмена</a>
+</form>
